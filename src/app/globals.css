@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", sans-serif;
+  --font-sans: "Poppins", sans-serif;
+  --breakpoint-3xl: 1920px;
+
+  /* Couleurs personnalisées */
+  --color-primary-blue: #050610;
+  --color-primary-blue-light: #103095;
+  --color-primary-red: #aa222b;
+  --color-background-main: #050610;
+  --color-background-secondary: #e2e2e21a;
+  --color-text-light: #c0c0c0;
+  --color-text-inactive: #999999;
+  --color-border-default: #686868;
+
+  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-gradient {
+    background: linear-gradient(82deg, #7989bc 17.63%, #c2d0ff 80.23%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
