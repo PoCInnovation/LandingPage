@@ -6,6 +6,10 @@
   --breakpoint-3xl: 1920px;
 
   /* Couleurs personnalisées */
+  --color-primary: #3b82f6;
+  --color-foreground: #ffffff;
+  --color-muted: #6b7280;
+  --color-muted-foreground: #9ca3af;
   --color-primary-blue: #050610;
   --color-primary-blue-light: #103095;
   --color-primary-red: #aa222b;
@@ -29,6 +33,7 @@
   }
 
   body {
+    background-color: black;
     @apply text-gray-900 antialiased;
   }
 }
@@ -47,5 +52,18 @@
 
   .container-custom {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
