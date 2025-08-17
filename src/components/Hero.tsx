@@ -25,7 +25,7 @@ export function Hero() {
             <div className="bg-foreground h-[2px] w-6" />
           </div>
 
-          <p className="text-md md:text-lg text-muted-foreground mb-8 max-w-4xl">
+          <p className="text-md md:text-lg text-muted-foreground mb-8 max-w-4xl px-5">
             PoC est le premier centre d'innovation français rassemblant les
             élèves les plus motivés. Les étudiants se rassemblent autour de
             projets open-source regroupés en 4 pôles principaux.
