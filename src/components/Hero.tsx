@@ -14,7 +14,7 @@ export function Hero() {
             alt="Logo"
             width={440}
             height={1}
-            className="mb-2"
+            className="mb-2 w-64 md:w-[440px]"
           />
 
           <div className="flex items-center justify-center space-x-2 mb-5">

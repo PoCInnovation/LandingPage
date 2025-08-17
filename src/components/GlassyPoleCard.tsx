@@ -12,27 +12,32 @@ function GlassyPoleCard({
   return (
     <div
       className="
-    bg-[#E2E2E21A]/90 bg-opacity-40
-    rounded-xl
-    border
-    border-foreground/10
-    flex
-    items-center
-    justify-between
-    backdrop-blur-2xl
-    w-[400px]
-    h-[85px]
-    px-4
-    py-2
+      bg-[#E2E2E21A]/90 bg-opacity-40
+      rounded-xl
+      border
+      border-foreground/10
+      flex
+      items-center
+      justify-between
+      backdrop-blur-2xl
+      w-full
+      min-h-[85px]
+      max-w-[400px]
+      px-3 sm:px-4
+      py-2
+      mx-auto
+      transition-all duration-300
+      hover:bg-opacity-60
     "
     >
-      <div>{icon}</div>
-      <div className="flex-1 flex flex-col px-4 justify-center text-left">
-        <h3 className="text-md text-foreground font-semibold">{title}</h3>
+      <div className="flex-shrink-0">{icon}</div>
+      <div className="flex-1 flex flex-col px-3 sm:px-4 justify-center text-left min-w-0">
+        <h3 className="text-sm sm:text-md text-foreground font-semibold truncate">
+          {title}
+        </h3>
         <p className="text-xs text-foreground/70 line-clamp-1">{description}</p>
       </div>
     </div>
   );
 }
-
 export default GlassyPoleCard;
