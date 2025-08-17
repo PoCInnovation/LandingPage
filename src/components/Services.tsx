@@ -4,7 +4,7 @@ import PoCButton from "./PocButton";
 function Services() {
   return (
     <div className="container-custom relative z-10 mt-10 md:mt-20">
-      <div className="relative mb-4 rounded-xl w-full text-center py-24 px-10 space-y-5 overflow-hidden">
+      <div className="relative mb-4 rounded-xl w-full text-center py-24 space-y-5 overflow-hidden justify-center items-center">
         <div className="absolute inset-0 rounded-xl p-0.5">
           <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-500 to-blue-500" />
         </div>
@@ -21,9 +21,11 @@ function Services() {
           transforme vos idées en solutions sur mesure avec expertise et
           créativité.
         </p>
-        <PoCButton bgColor="bg-black" className="mt-5">
-          <p className="text-foreground">En savoir plus</p>
-        </PoCButton>
+        <div className="relative z-10 flex justify-center mt-8">
+          <PoCButton bgColor="bg-black">
+            <p className="text-foreground">En savoir plus</p>
+          </PoCButton>
+        </div>
       </div>
     </div>
   );

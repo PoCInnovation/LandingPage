@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Association from "@/components/Association";
+import Footer from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import OurPoles from "@/components/OurPoles";
 import Services from "@/components/Services";
@@ -45,6 +46,7 @@ export default function Home() {
         <OurPoles />
         <Association />
         <Services />
+        <Footer />
       </section>
     </main>
   );
