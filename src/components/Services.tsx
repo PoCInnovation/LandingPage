@@ -4,7 +4,7 @@ import PoCButton from "./PocButton";
 function Services() {
   return (
     <div className="container-custom relative z-10 mt-10 md:mt-20">
-      <div className="relative mb-4 rounded-xl w-full text-center py-24 space-y-5 overflow-hidden justify-center items-center">
+      <div className="relative mb-4 rounded-xl w-full text-center px-7 py-24 space-y-5 overflow-hidden justify-center items-center">
         <div className="absolute inset-0 rounded-xl p-0.5">
           <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-red-500 to-blue-500" />
         </div>
