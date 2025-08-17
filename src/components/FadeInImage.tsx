@@ -21,9 +21,11 @@ export default function FadeInImage({
     >
       <Image
         {...props}
-        className={`transition-opacity duration-500 ease-in-out ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        } ${props.className || ""}`}
+        className={`${props.className || ""}`}
+        style={{
+          opacity: isLoaded ? 1 : 0,
+          transition: "opacity 0.3s ease-out",
+        }}
         onLoad={() => setIsLoaded(true)}
       />
     </div>

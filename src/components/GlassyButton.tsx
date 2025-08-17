@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function GlassyButton({
   children,
   onClick,
@@ -8,7 +12,7 @@ export default function GlassyButton({
   className?: string;
 }) {
   return (
-    <button
+    <motion.button
       onClick={onClick}
       className={`
         relative px-6 py-4 text-white font-medium text-md
@@ -16,18 +20,32 @@ export default function GlassyButton({
         rounded-3xl 
         backdrop-blur-2xl 
         transition-all duration-300 ease-in-out 
-        hover:bg-opacity-50 hover:border-opacity-20 hover:-translate-y-0.5 
+        hover:bg-opacity-50 hover:border-opacity-20
         hover:shadow-2xl hover:shadow-black/20
-        active:translate-y-0 
         shadow-xl shadow-black/10
         tracking-wide
         cursor-pointer
         ${className}
       `}
+      whileHover={{
+        y: -2,
+        scale: 1.02,
+        transition: { duration: 0.2 },
+      }}
+      whileTap={{
+        y: 0,
+        scale: 0.98,
+        transition: { duration: 0.1 },
+      }}
     >
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <motion.div
+        className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 pointer-events-none"
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      />
 
       <span className="relative z-10">{children}</span>
-    </button>
+    </motion.button>
   );
 }

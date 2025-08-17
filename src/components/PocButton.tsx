@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function PoCButton({
   children,
   onClick,
@@ -10,7 +14,7 @@ export default function PoCButton({
   bgColor?: string;
 }) {
   return (
-    <button
+    <motion.button
       onClick={onClick}
       className={`
         relative px-6 py-4 text-black font-medium text-md
@@ -18,15 +22,24 @@ export default function PoCButton({
         rounded-3xl 
         backdrop-blur-2xl 
         transition-all duration-300 ease-in-out 
-        hover:bg-opacity-95 hover:-translate-y-0.5 
+        hover:bg-opacity-95
         hover:shadow-2xl hover:shadow-black/10
-        active:translate-y-0 
         shadow-xl shadow-black/5
         tracking-wide
         overflow-hidden
         cursor-pointer
         ${className}
       `}
+      whileHover={{
+        y: -2,
+        scale: 1.02,
+        transition: { duration: 0.2 },
+      }}
+      whileTap={{
+        y: 0,
+        scale: 0.98,
+        transition: { duration: 0.1 },
+      }}
       style={{
         boxShadow: `
           0 -1px 3px -1px rgba(29, 78, 216, 0.9),
@@ -51,6 +64,6 @@ export default function PoCButton({
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gray-100/20 to-gray-50/10 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
       <span className="relative z-10">{children}</span>
-    </button>
+    </motion.button>
   );
 }

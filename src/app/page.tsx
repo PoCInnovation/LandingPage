@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Association from "@/components/Association";
 import Footer from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import GlassyNavbar from "@/components/Navbar";
 import OurPoles from "@/components/OurPoles";
+import ScrollReveal from "@/components/ScrollReveal";
 import Services from "@/components/Services";
 import SocialProof from "@/components/SocialProof";
 
@@ -44,11 +47,17 @@ export default function Home() {
           </div>
         </div>
         <Hero />
-        <SocialProof />
-        <OurPoles />
+        <ScrollReveal delay={0.1}>
+          <SocialProof />
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
+          <OurPoles />
+        </ScrollReveal>
         <Association />
         <Services />
-        <Footer />
+        <ScrollReveal delay={0.1}>
+          <Footer />
+        </ScrollReveal>
       </section>
     </main>
   );
