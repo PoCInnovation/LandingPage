@@ -26,8 +26,8 @@ function OurPoles() {
             2xl:gap-6
             items-stretch
             justify-items-center
-            max-w-sm
-            sm:max-w-md
+            max-w-full
+            sm:max-w-2xl
             md:max-w-4xl
             lg:max-w-5xl
             xl:max-w-7xl
