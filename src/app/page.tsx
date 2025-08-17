@@ -2,6 +2,7 @@ import Image from "next/image";
 import Association from "@/components/Association";
 import { Hero } from "@/components/Hero";
 import OurPoles from "@/components/OurPoles";
+import Services from "@/components/Services";
 import SocialProof from "@/components/SocialProof";
 
 export default function Home() {
@@ -20,7 +21,7 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* <div className="absolute bottom-32 md:w-full w-[400vw] left-0 overflow-hidden z-[1]">
+        <div className="absolute bottom-32 md:w-full w-[400vw] left-0 overflow-hidden z-[1]">
           <div className="relative">
             <Image
               src="/red_lines.svg"
@@ -38,11 +39,12 @@ export default function Home() {
               }}
             ></div>
           </div>
-        </div> */}
+        </div>
         <Hero />
         <SocialProof />
         <OurPoles />
         <Association />
+        <Services />
       </section>
     </main>
   );

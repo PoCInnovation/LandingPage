@@ -21,6 +21,7 @@ export default function GlassyButton({
         active:translate-y-0 
         shadow-xl shadow-black/10
         tracking-wide
+        cursor-pointer
         ${className}
       `}
     >
