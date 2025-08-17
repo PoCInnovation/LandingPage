@@ -10,10 +10,10 @@ function Association() {
     <div className="container-custom relative z-10 mt-10 md:mt-20 flex flex-col items-center justify-center text-center px-4">
       <motion.h2
         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4"
-        initial={{ y: 50 }}
+        initial={{ y: 20 }}
         whileInView={{ y: 0 }}
-        viewport={{ once: true, margin: "-150px" }}
-        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         Au cœur de l&apos;association
       </motion.h2>
@@ -22,10 +22,14 @@ function Association() {
         <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0 items-center lg:items-start">
           <motion.div
             className="w-full sm:w-auto lg:w-1/2 xl:w-[45%]"
-            initial={{ x: -60 }}
+            initial={{ x: -30 }}
             whileInView={{ x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 1.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              duration: 1.2,
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
           >
             <Image
               src="/conference.png"
@@ -46,10 +50,14 @@ function Association() {
 
           <motion.div
             className="w-full lg:w-1/2 xl:w-[55%]"
-            initial={{ x: 60 }}
+            initial={{ x: 30 }}
             whileInView={{ x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 1.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{
+              duration: 1.2,
+              delay: 0.3,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-4 xl:gap-6">
               {[
@@ -84,7 +92,7 @@ function Association() {
               ].map((card, index) => (
                 <motion.div
                   key={index}
-                  initial={{ y: 30 }}
+                  initial={{ y: 15 }}
                   whileInView={{ y: 0 }}
                   viewport={{ once: true }}
                   transition={{
