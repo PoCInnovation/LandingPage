@@ -22,7 +22,7 @@ function GlassyPoleCard({
       backdrop-blur-2xl
       w-full
       min-h-[85px]
-      max-w-[400px]
+      max-w-[450px]
       px-3 sm:px-4
       py-2
       mx-auto
