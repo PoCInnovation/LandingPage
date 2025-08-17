@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import FadeInImage from "./FadeInImage";
 import GlassyStatCard from "./GlassyStatCard";
 
 function Association() {
@@ -12,7 +12,7 @@ function Association() {
       <div className="mt-6 w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0 items-center lg:items-start">
           <div className="w-full sm:w-auto lg:w-1/2 xl:w-[45%]">
-            <Image
+            <FadeInImage
               src="/conference.png"
               alt="Conference"
               width={583}
@@ -26,6 +26,7 @@ function Association() {
               style={{
                 width: "auto",
               }}
+              fallbackHeight={400}
             />
           </div>
 

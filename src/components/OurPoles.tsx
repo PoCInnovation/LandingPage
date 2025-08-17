@@ -4,7 +4,7 @@ import GlassyPoleCard from "./GlassyPoleCard";
 
 function OurPoles() {
   return (
-    <div className="py-10 px-4">
+    <div className="py-10 px-4 md:mt-12">
       <div className="container mx-auto max-w-7xl relative z-10 flex flex-col items-center justify-center text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 sm:mb-8">
           Nos Pôles

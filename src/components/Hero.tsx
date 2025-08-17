@@ -1,20 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import FadeInImage from "./FadeInImage";
 import GlassyButton from "./GlassyButton";
 import PoCButton from "./PocButton";
 
 export function Hero() {
   return (
     <>
-      <div className="container-custom relative z-10 mt-40 md:mt-64">
+      <div className="container-custom relative z-10 mt-36 md:mt-72">
         <div className="flex flex-col items-center justify-center h-full text-center">
-          <Image
+          <FadeInImage
             src="/logo_poc.png"
             alt="Logo"
             width={440}
             height={1}
             className="mb-2 w-64 md:w-[440px]"
+            fallbackHeight={200}
           />
 
           <div className="flex items-center justify-center space-x-2 mb-5">

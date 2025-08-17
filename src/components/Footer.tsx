@@ -1,30 +1,27 @@
-import Image from "next/image";
 import React from "react";
+import FadeInImage from "./FadeInImage";
 import GlassyButton from "./GlassyButton";
 
 function Footer() {
   return (
     <footer className="relative w-full py-6 sm:py-8 lg:py-12 mt-12 sm:mt-16 lg:mt-20">
-      {/* Ligne de séparation responsive */}
       <div className="relative w-full h-px mb-6 sm:mb-8">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground to-transparent" />
       </div>
 
       <div className="container-custom px-4 sm:px-6 lg:px-8">
-        {/* Layout responsive : vertical sur mobile, horizontal sur desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6 sm:gap-8 lg:gap-4">
-          {/* Logo - centré sur mobile, aligné à gauche sur desktop */}
           <div className="flex items-center justify-center lg:justify-start order-1 lg:order-1">
-            <Image
+            <FadeInImage
               src="/logo_poc.png"
               alt="Logo PoC"
               width={80}
               height={80}
               className="object-contain w-16 h-16 sm:w-20 sm:h-20"
+              fallbackHeight={80}
             />
           </div>
 
-          {/* Réseaux sociaux - en haut sur mobile, à droite sur desktop */}
           <div className="flex items-center justify-center lg:justify-end space-x-4 order-2 lg:order-3">
             <a
               href="#"
@@ -54,7 +51,6 @@ function Footer() {
             </a>
           </div>
 
-          {/* Bouton centré - au milieu sur mobile et desktop */}
           <div className="flex justify-center order-3 lg:order-2">
             <GlassyButton>
               <span className="text-foreground">Nous contacter</span>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Association from "@/components/Association";
 import Footer from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import GlassyNavbar from "@/components/Navbar";
 import OurPoles from "@/components/OurPoles";
 import Services from "@/components/Services";
 import SocialProof from "@/components/SocialProof";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main>
       <section className="relative min-h-screen flex flex-col items-center overflow-hidden bg-background-main">
+        <GlassyNavbar />
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute top-0 left-0 md:w-full w-[400vw] overflow-hidden z-[2]">
             <Image
