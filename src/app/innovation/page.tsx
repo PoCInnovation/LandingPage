@@ -1,16 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Association from "@/components/Association";
-import Footer from "@/components/Footer";
-import { Hero } from "@/components/Hero";
 import GlassyNavbar from "@/components/Navbar";
-import OurPoles from "@/components/OurPoles";
-import ScrollReveal from "@/components/ScrollReveal";
-import Services from "@/components/Services";
-import SocialProof from "@/components/SocialProof";
+import { motion } from "framer-motion";
+import InnovationPoles from "@/components/InnovationPoles";
 
-export default function Home() {
+export default function InnovationPage() {
   return (
     <main>
       <section className="relative min-h-screen flex flex-col items-center overflow-hidden bg-background-main">
@@ -46,19 +41,29 @@ export default function Home() {
             ></div>
           </div>
         </div>
-        <Hero />
-        <ScrollReveal delay={0.1}>
-          <SocialProof />
-        </ScrollReveal>
-        <ScrollReveal delay={0.2}>
-          <OurPoles />
-        </ScrollReveal>
-        <Association />
-        <Services />
-        <ScrollReveal delay={0.1}>
-          <Footer />
-        </ScrollReveal>
+        <div className="container-custom relative z-10 mt-36 md:mt-72 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold text-foreground">A propos de nous</h1>
+        </div>
+        <div
+            className="text-md md:text-lg text-muted-foreground mb-8 max-w-4xl px-5 mt-5 text-center mx-auto"
+          >
+            PoC Innovation est une communauté de développeurs passionnés qui développent des projets 
+            open-source, organise et participe à des évènements dans toute la France. Organisée en pôles 
+            d’expertise, l’association fonctionne par vagues de projets de 6 mois pour favoriser la montée en 
+            compétence, la collaboration, et l’innovation.
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+          >
+            <InnovationPoles />
+          </motion.div>
       </section>
     </main>
   );
-}
+} 

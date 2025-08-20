@@ -38,7 +38,7 @@ function GlassyNavbar() {
         className="object-contain w-14 h-14 sm:w-18 sm:h-18"
       />
       <div className="flex items-center space-x-4 justify-center">
-        <Link href="/contact" className="cursor-pointer group">
+        <Link href="/" className="cursor-pointer group">
           <button className="cursor-pointer">
             <span className="text-muted-foreground group-hover:text-white transition-colors duration-200">
               Acceuil
@@ -52,7 +52,12 @@ function GlassyNavbar() {
             </span>
           </button>
         </Link>
-        <PoCButton className="cursor-pointer">
+        <PoCButton
+          className="cursor-pointer"
+          onClick={() => {
+            window.location.href = "mailto:contact@poc-innovation.fr";
+          }}
+        >
           <span className="text-black">Contact</span>
         </PoCButton>
       </div>

@@ -25,6 +25,7 @@
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
+  --blur-2xl: 25px
 }
 
 @layer base {
@@ -51,7 +52,7 @@
   }
 
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto px-2 sm:px-4 lg:px-6;
   }
 
   .animate-scroll {
