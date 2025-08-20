@@ -10,7 +10,7 @@ function Footer() {
       </div>
 
       <div className="container-custom px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6 sm:gap-8 lg:gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-6 sm:gap-10 lg:gap-14">
           <div className="flex items-center justify-center lg:justify-start order-1 lg:order-1">
             <FadeInImage
               src="/logo_poc.png"
@@ -24,7 +24,7 @@ function Footer() {
 
           <div className="flex items-center justify-center lg:justify-end space-x-4 order-2 lg:order-3">
             <a
-              href="#"
+              href="https://github.com/PoCInnovation"
               className="text-foreground/70 hover:text-foreground transition-colors"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/company/pocinnovation/"
               className="text-foreground/70 hover:text-foreground transition-colors"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -42,7 +42,7 @@ function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://discord.com/invite/qzAweSUUca"
               className="text-foreground/70 hover:text-foreground transition-colors"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,11 @@ function Footer() {
           </div>
 
           <div className="flex justify-center order-3 lg:order-2">
-            <GlassyButton>
+            <GlassyButton
+              onClick={() => {
+                window.location.href = "mailto:contact@poc-innovation.fr";
+              }}
+            >
               <span className="text-foreground">Nous contacter</span>
             </GlassyButton>
           </div>

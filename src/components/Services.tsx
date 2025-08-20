@@ -6,7 +6,7 @@ import PoCButton from "./PocButton";
 
 function Services() {
   return (
-    <div className="container-custom relative z-10 mt-10 md:mt-20 flex justify-center">
+    <div className="container-custom relative z-10 mt-20 md:mt-30 flex justify-center">
       <motion.div
         className="max-w-7xl relative mb-4 rounded-xl w-full text-center px-7 py-24 space-y-5 overflow-hidden justify-center items-center"
         initial={{ y: 60 }}

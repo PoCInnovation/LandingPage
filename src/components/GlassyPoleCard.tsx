@@ -35,7 +35,7 @@ function GlassyPoleCard({
         <h3 className="text-base sm:text-md text-foreground font-semibold truncate">
           {title}
         </h3>
-        <p className="text-sm sm:text-xs text-foreground/70 line-clamp-2 sm:line-clamp-1 leading-tight">
+        <p className="text-sm sm:text-xs text-foreground/70 line-clamp-2 sm:line-clamp-1 leading-tight mt-2">
           {description}
         </p>
       </div>

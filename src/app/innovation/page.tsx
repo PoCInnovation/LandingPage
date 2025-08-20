@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import GlassyNavbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
 import InnovationPoles from "@/components/InnovationPoles";
 
@@ -63,6 +65,9 @@ export default function InnovationPage() {
           >
             <InnovationPoles />
           </motion.div>
+          <ScrollReveal delay={0.1}>
+          <Footer />
+        </ScrollReveal>
       </section>
     </main>
   );

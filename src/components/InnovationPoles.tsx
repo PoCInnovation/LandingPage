@@ -3,6 +3,10 @@
 import { useState, useEffect } from "react";
 import SelectablePoleCard from "./SelectablePoleCard";
 import AIPoleComponent from "./PoleComponents/AIPoleComponent";
+import P2PPoleComponent from "./PoleComponents/P2PPoleComponent";
+import SoftwarePoleComponent from "./PoleComponents/SoftPoleComponent";
+import CyberPoleComponent from "./PoleComponents/CyberPoleComponent";
+
 
 const POLES = [
   {
@@ -43,7 +47,7 @@ const POLES = [
     borderColor: "rgba(123, 0, 255, 0.5)",
     description:
       "Développement web, mobile et desktop : nous construisons des solutions techniques utiles, performantes et open-source.",
-    component: AIPoleComponent,
+    component: SoftwarePoleComponent,
     icon: (
         <div className="flex items-center justify-center bg-gradient-to-tr from-[#224DAA] to-[#3B1265]  h-14 w-14 rounded-sm">
         <svg
@@ -72,7 +76,7 @@ const POLES = [
     borderColor: "rgba(95, 190, 60, 0.5)",
     description:
       "Conception d'apps, smart contracts et protocoles décentralisés sur Ethereum, Layer 2, Solana et plus.",
-    component: AIPoleComponent,
+    component: P2PPoleComponent,
     icon: (
         <div className="flex items-center justify-center bg-gradient-to-tr from-[#7C9221] to-[#12653B] h-14 w-14 rounded-sm">
         <svg
@@ -101,7 +105,7 @@ const POLES = [
     borderColor: "rgba(0, 102, 255, 0.5)",
     description:
       "Analyse, pentesting, audit et création d'outils défensifs pour renforcer la sécurité des systèmes numériques.",
-    component: AIPoleComponent,
+    component: CyberPoleComponent,
     icon: (
         <div className="flex items-center justify-center bg-gradient-to-tr from-[#2D909D] to-[#0F439D] h-14 w-14 rounded-sm">
         <svg
@@ -158,7 +162,7 @@ export default function InnovationPoles() {
           ))}
         </div>
 
-        <div className="mt-8">
+        <div className="mt-40">
             <active.component />
         </div>
       </div>

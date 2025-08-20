@@ -9,6 +9,7 @@ import OurPoles from "@/components/OurPoles";
 import ScrollReveal from "@/components/ScrollReveal";
 import Services from "@/components/Services";
 import SocialProof from "@/components/SocialProof";
+import ScrollArrow from "@/components/ScrollArrow";
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
           </div>
         </div>
         <Hero />
+        <ScrollArrow />
         <ScrollReveal delay={0.1}>
           <SocialProof />
         </ScrollReveal>

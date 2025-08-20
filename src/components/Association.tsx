@@ -7,7 +7,7 @@ import GlassyStatCard from "./GlassyStatCard";
 
 function Association() {
   return (
-    <div className="container-custom relative z-10 mt-10 md:mt-20 flex flex-col items-center justify-center text-center px-4">
+    <div className="container-custom relative z-10 mt-10 md:mt-30 flex flex-col items-center justify-center text-center px-4">
       <motion.h2
         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4"
         initial={{ y: 20 }}
@@ -38,7 +38,7 @@ function Association() {
               height={400}
               className="
                 w-full sm:w-auto
-                h-[400px] sm:h-[456px] lg:h-[516px]
+                h-[400px] sm:h-[456px] lg:h-[520px]
                 rounded-lg shadow-md border border-foreground/10
                 object-cover
               "
@@ -59,34 +59,34 @@ function Association() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-4 xl:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-4 xl:gap-5">
               {[
                 {
-                  statText: "+150",
-                  title: "Projets complétés",
+                  statText: "25+",
+                  title: "Membres actifs",
                   description:
-                    "PoC entreprend de nombreux projets et s'organise autour de sessions de 6 mois.",
+                    "Présent dans plusieurs campus dans toute la France dont en majorité Paris et Lyon.",
                   delay: 0.8,
                 },
                 {
-                  statText: "20+",
-                  title: "Membres actifs",
+                  statText: "100+",
+                  title: "Projets complétés",
                   description:
-                    "Notre équipe passionnée travaille ensemble pour créer des solutions innovantes.",
+                    "PoC entreprend de nombreux projets indépendant ou en collaboration avec une entreprise.",
                   delay: 1.0,
                 },
                 {
-                  statText: "5",
-                  title: "Partenaires",
+                  statText: "150+",
+                  title: "Évenements",
                   description:
-                    "Nous collaborons avec des entreprises leaders pour maximiser notre impact.",
+                    "A destination d’étudiants et de professionnels dans toute la France.",
                   delay: 0.8,
                 },
                 {
-                  statText: "24/7",
-                  title: "Support continu",
+                  statText: "200+",
+                  title: "Alumni dans le monde",
                   description:
-                    "Un accompagnement permanent pour assurer le succès de chaque projet.",
+                    "De start-ups aux géants de la tech comme Google ou Microsoft, nos anciens propagent l’ADN PoC aux quatre coins du globe.",
                   delay: 0.9,
                 },
               ].map((card, index) => (

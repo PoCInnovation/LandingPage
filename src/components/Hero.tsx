@@ -62,8 +62,9 @@ export function Hero() {
             }}
           >
             PoC est le premier centre d'innovation français rassemblant les
-            élèves les plus motivés. Les étudiants se rassemblent autour de
-            projets open-source regroupés en 4 pôles principaux.
+            élèves les plus motivés.
+            Nous créons des projets innovant et open-source, avec les technologies de demain,
+            en collaboration avec des entreprises du secteur
           </motion.p>
 
           <motion.div
@@ -76,8 +77,20 @@ export function Hero() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <GlassyButton>En savoir plus</GlassyButton>
-            <PoCButton>Nous contacter</PoCButton>
+            <GlassyButton
+              onClick={() => {
+                window.location.href = "/innovation";
+              }}
+            >
+              En savoir plus
+            </GlassyButton>
+            <PoCButton
+              onClick={() => {
+                window.location.href = "mailto:contact@poc-innovation.fr";
+              }}
+            >
+              Nous contacter
+            </PoCButton>
           </motion.div>
         </div>
       </div>
