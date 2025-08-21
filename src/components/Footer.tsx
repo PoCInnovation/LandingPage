@@ -5,8 +5,8 @@ import GlassyButton from "./GlassyButton";
 function Footer() {
   return (
     <footer className="relative w-full py-6 sm:py-8 lg:py-12 mt-12 sm:mt-16 lg:mt-20">
-      <div className="relative w-full h-px mb-6 sm:mb-8">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground to-transparent" />
+      <div className="relative w-full h-[2px] mb-6 sm:mb-8">
+        <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-full bg-gradient-to-r from-transparent via-foreground/35 to-transparent rounded-full" />
       </div>
 
       <div className="container-custom px-4 sm:px-6 lg:px-8">

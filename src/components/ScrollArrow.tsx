@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 export default function ScrollArrow() {
   return (
     <motion.div
-      className="flex flex-col items-center justify-center mt-50 cursor-pointer"
+      className="flex flex-col items-center justify-center mt-50 cursor-pointer z-10"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

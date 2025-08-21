@@ -19,7 +19,7 @@ export default function InnovationPage() {
               alt=""
               width={1920}
               height={1080}
-              className="md:w-full md:h-auto opacity-40"
+              className="md:w-full md:h-auto opacity-60"
               priority
             />
           </div>
@@ -31,7 +31,7 @@ export default function InnovationPage() {
               alt=""
               width={1920}
               height={1080}
-              className="md:w-full md:h-auto opacity-40 rotate-[180deg]"
+              className="md:w-full md:h-auto opacity-60 rotate-[180deg]"
               priority
             />
             <div

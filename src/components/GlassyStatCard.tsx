@@ -19,12 +19,11 @@ function GlassyStatCard({
         space-y-3 sm:space-y-4 lg:space-y-5 
         w-full 
         h-[200px] sm:h-[220px] lg:h-[250px]
-        bg-[#E2E2E21A]/80 
+        bg-[#E2E2E21A]/70 
         rounded-xl 
         border border-foreground/10 
         backdrop-blur-2xl
         transition-all duration-300
-        hover:bg-opacity-90
         ${className}
       `}
     >

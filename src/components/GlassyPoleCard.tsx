@@ -12,7 +12,7 @@ function GlassyPoleCard({
   return (
     <div
       className="
-      bg-[#E2E2E21A]/90 bg-opacity-40
+      bg-[#E2E2E21A]/70
       rounded-xl
       border
       border-foreground/10
@@ -27,7 +27,7 @@ function GlassyPoleCard({
       py-3 sm:py-2
       mx-auto
       transition-all duration-300
-      hover:bg-opacity-60
+      hover:bg-[#E6E6E21F]/90
     "
     >
       <div className="flex-shrink-0">{icon}</div>

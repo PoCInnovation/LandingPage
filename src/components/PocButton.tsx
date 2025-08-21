@@ -7,11 +7,13 @@ export default function PoCButton({
   onClick,
   className,
   bgColor = "bg-white",
+  textColor = "text-black",
 }: {
   children?: React.ReactNode;
   onClick?: () => void;
   className?: string;
   bgColor?: string;
+  textColor?: string;
 }) {
   return (
     <motion.button
@@ -63,7 +65,7 @@ export default function PoCButton({
 
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gray-100/20 to-gray-50/10 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-      <span className="relative z-10">{children}</span>
+      <span className={`relative z-10 ${textColor}`}>{children}</span>
     </motion.button>
   );
 }

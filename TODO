@@ -6,8 +6,8 @@ Page acceuil:
 - plus de transparence sur card pole et stats "au coeur de l'association"
 
 Page innovation:
+- ajouter/fix animations (scrollReveal et hover)
 - regler layout cards
-- faire partie exposion projet
 - faire responsive
 - changer contenue cards pour chaque pole (img, description, ...)
 
