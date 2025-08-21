@@ -1,9 +1,7 @@
 Page acceuil:
-- ajouter leger reflet bleu et rouge sur logo
 - changer photo section "au coeur de l'association"
 - revoir responsive sur certaine parties
 - ajouter hover sur card pole (maybe hover avec couleur type carte de pole selectionné sur page innovation)
-- plus de transparence sur card pole et stats "au coeur de l'association"
 
 Page innovation:
 - ajouter/fix animations (scrollReveal et hover)
