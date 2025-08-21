@@ -28,7 +28,7 @@ function GlassyStatCard({
       `}
     >
       <div className="p-2 sm:p-3 lg:p-4">
-        <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground opacity-100">
+        <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-tr from-[#7989BC] to-[#C2D0FF] text-transparent bg-clip-text">
           {statText}
         </span>
       </div>
