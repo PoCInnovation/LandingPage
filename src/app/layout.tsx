@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Poppins } from "next/font/google";
 import React from "react";
 import "./globals.css";
+import GlassyNavbar from "@/components/Navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={poppins.variable}>
       <body className="font-sans antialiased">
+        <GlassyNavbar />
         {children}
         <Analytics />
       </body>

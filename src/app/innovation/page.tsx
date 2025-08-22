@@ -19,19 +19,19 @@ export default function InnovationPage() {
               alt=""
               width={1920}
               height={1080}
-              className="md:w-full md:h-auto opacity-60"
+              className="md:w-full md:h-auto opacity-35"
               priority
             />
           </div>
         </div>
-        <div className="absolute bottom-32 md:w-full w-[400vw] left-0 overflow-hidden z-[1]">
+        <div className="absolute top-[45%] md:w-full w-[400vw] left-0 overflow-hidden z-[1]">
           <div className="relative">
             <Image
               src="/red_lines.svg"
               alt=""
               width={1920}
               height={1080}
-              className="md:w-full md:h-auto opacity-60 rotate-[180deg]"
+              className="md:w-full md:h-auto opacity-40 rotate-[180deg]"
               priority
             />
             <div

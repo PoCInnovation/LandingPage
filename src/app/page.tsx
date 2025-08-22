@@ -4,7 +4,6 @@ import Image from "next/image";
 import Association from "@/components/Association";
 import Footer from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import GlassyNavbar from "@/components/Navbar";
 import OurPoles from "@/components/OurPoles";
 import ScrollReveal from "@/components/ScrollReveal";
 import Services from "@/components/Services";
@@ -15,7 +14,6 @@ export default function Home() {
   return (
     <main>
       <section className="relative min-h-screen flex flex-col items-center overflow-hidden bg-background-main">
-        <GlassyNavbar />
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute top-0 left-0 md:w-full w-[400vw] overflow-hidden z-[2]">
             <Image
@@ -23,19 +21,19 @@ export default function Home() {
               alt=""
               width={1920}
               height={1080}
-              className="md:w-full md:h-auto opacity-60"
+              className="md:w-full md:h-auto opacity-35"
               priority
             />
           </div>
         </div>
-        <div className="absolute bottom-32 md:w-full w-[400vw] left-0 overflow-hidden z-[1]">
+        <div className="absolute top-[46%] md:w-full w-[400vw] left-0 overflow-hidden z-[1]">
           <div className="relative">
             <Image
               src="/red_lines.svg"
               alt=""
               width={1920}
               height={1080}
-              className="md:w-full md:h-auto opacity-60 rotate-[180deg]"
+              className="md:w-full md:h-auto opacity-45 rotate-[180deg]"
               priority
             />
             <div
