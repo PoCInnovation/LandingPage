@@ -14,41 +14,43 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="h-[120px] md:h-[160px] flex items-center justify-center mb-2"
           >
             <div className="relative inline-block">
-  {/* Gradient overlay, masked by logo shape */}
-  <div
-    className="absolute inset-0 mb-2 z-20"
-    style={{
-      WebkitMaskImage: "url(/logo_poc.png)",
-      WebkitMaskRepeat: "no-repeat",
-      WebkitMaskPosition: "center",
-      WebkitMaskSize: "contain",
-      maskImage: "url(/logo_poc.png)",
-      maskRepeat: "no-repeat",
-      maskPosition: "center",
-      maskSize: "contain",
-      background: `
+              {/* Gradient overlay, masked by logo shape */}
+              <div
+                className="absolute inset-0 z-20"
+                style={{
+                  WebkitMaskImage: "url(/logo_poc.png)",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  WebkitMaskSize: "contain",
+                  maskImage: "url(/logo_poc.png)",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "center",
+                  maskSize: "contain",
+                  background: `
         radial-gradient(circle at bottom left, rgba(96,165,250,0.5) 0%, transparent 30%),
         radial-gradient(circle at top right, rgba(244,114,182,0.6) 0%, transparent 40%)
       `,
-    }}
-  />
+                }}
+              />
 
-  {/* Original white logo on top */}
-  <Image
-    src="/logo_poc.png"
-    alt="Logo"
-    width={440}
-    height={1}
-    className="relative z-10 mb-2 w-82 md:w-[560px]"
-  />
-</div>
+              {/* Original white logo on top */}
+              <Image
+                src="/logo_poc.png"
+                alt="Logo"
+                width={440}
+                height={160}
+                className="relative z-10 w-[330px] md:w-[560px] h-auto"
+                priority
+              />
+            </div>
           </motion.div>
 
           {/* --- everything below unchanged --- */}
           <motion.div
-            className="flex items-center justify-center space-x-2 mb-5"
+            className="flex items-center justify-center space-x-2 mb-5 mt-7"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
