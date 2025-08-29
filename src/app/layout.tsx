@@ -13,6 +13,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon_light.ico",
+  },
   title: "PoC - Centre d'innovation étudiant",
   description:
     "Découvrez notre association étudiante dédiée à l’innovation et à la transformation des idées en projets concrets.",
