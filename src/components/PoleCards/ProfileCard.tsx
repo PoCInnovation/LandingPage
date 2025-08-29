@@ -10,7 +10,7 @@ type ProfileCardProps = {
 
 export default function ProfileCard({ name, role, imageSrc, imageAlt, onContactClick }: ProfileCardProps) {
   return (
-    <div className="relative bg-[#E2E2E21A]/70 backdrop-blur-2xl rounded-xl border border-foreground/10 overflow-hidden h-150 w-90">
+    <div className="relative bg-[#E2E2E21A]/70 backdrop-blur-2xl rounded-xl border border-foreground/10 overflow-hidden w-full h-full min-h-[300px] aspect-[3/4]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 

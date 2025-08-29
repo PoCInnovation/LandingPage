@@ -9,7 +9,7 @@ type EventImageCardProps = {
 
 export default function MediumEventCard({ imageSrc, imageAlt, title, date }: EventImageCardProps) {
   return (
-    <div className="relative bg-[#E2E2E21A]/70 backdrop-blur-2xl rounded-xl border border-foreground/10 overflow-hidden h-72 w-90">
+    <div className="relative bg-[#E2E2E21A]/70 backdrop-blur-2xl rounded-xl border border-foreground/10 overflow-hidden w-full h-full min-h-[250px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img 
