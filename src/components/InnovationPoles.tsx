@@ -144,26 +144,28 @@ export default function InnovationPoles() {
   const active = POLES.find((p) => p.key === selected)!;
 
   return (
-    <div className="w-full px-4 md:mt-20">
-      <div className="container mx-auto max-w-8xl relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-          {POLES.map((pole) => (
-            <SelectablePoleCard
-              key={pole.key}
-              title={pole.title}
-              subtitle={pole.subtitle}
-              description={pole.description}
-              selected={pole.key === selected}
-              selectedGradientClass={pole.gradient}
-              borderColor={pole.borderColor}
-              onClick={() => setSelected(pole.key)}
-              icon={pole.icon}
-            />
-          ))}
+    <div className="w-full md:mt-20">
+      <div className="relative z-10">
+        <div className="px-4 container mx-auto max-w-8xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            {POLES.map((pole) => (
+              <SelectablePoleCard
+                key={pole.key}
+                title={pole.title}
+                subtitle={pole.subtitle}
+                description={pole.description}
+                selected={pole.key === selected}
+                selectedGradientClass={pole.gradient}
+                borderColor={pole.borderColor}
+                onClick={() => setSelected(pole.key)}
+                icon={pole.icon}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-40">
-            <active.component />
+        <div className="mt-40 mx-auto container">
+          <active.component />
         </div>
       </div>
     </div>

@@ -207,7 +207,7 @@ export default function AIPoleComponent() {
       </div>
       
 
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full px-4">
         <FeaturedProjects projects={featuredProjects} />
       </div>
     </div>
