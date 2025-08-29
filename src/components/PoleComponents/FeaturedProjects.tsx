@@ -32,13 +32,12 @@ export default function FeaturedProjects({ title = "Les projets phares de notre 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         {/* Left: Large image + thumbnails below */}
         <div className="lg:col-span-7">
-          <div className="bg-[#E2E2E21A]/40 rounded-2xl border border-foreground/10 overflow-hidden">
+          <div className="bg-[#E2E2E21A]/40 rounded-2xl border border-foreground/10 overflow-hidden w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] relative">
             <Image
               src={active.heroImage.src}
               alt={active.heroImage.alt}
-              width={1280}
-              height={720}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
               priority
             />
           </div>
