@@ -28,12 +28,12 @@ export default function AIPoleComponent() {
         <StatsCard
           number="20+"
           title="Projets complétés"
-          description="Du reverse engineering de malwares à la création de RAT, en passant par l’obfuscation et les outils de défense, nos projets couvrent la partie offensive et défensive de la cybersécurité."
+          description="Du reverse engineering de malwares à la création de RAT nos projets couvrent la partie offensive et défensive de la cybersécurité."
         />
         <StatsCard
           number="15+"
           title="Workshops de découverte"
-          description="Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie, OSINT, sécurité web et bien plus."
+          description="Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie et bien plus."
         />
       </div>
 

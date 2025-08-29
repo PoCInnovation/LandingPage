@@ -27,11 +27,9 @@ export default function ScrollReveal({
     <motion.div
       className={className}
       initial={{
-        opacity: 0,
         ...directionOffset[direction],
       }}
       whileInView={{
-        opacity: 1,
         y: 0,
         x: 0,
       }}

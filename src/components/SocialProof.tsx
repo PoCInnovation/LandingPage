@@ -19,8 +19,8 @@ function SocialProof() {
             <motion.div
               key={index}
               className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              whileInView={{ y: 0 }}
               transition={{
                 duration: 0.5,
                 delay: index * 0.1,

@@ -92,8 +92,8 @@ export function Hero() {
 
           <motion.div
             className="flex items-center justify-center space-x-4 md:space-x-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 30 }}
+            animate={{ y: 0 }}
             transition={{
               duration: 0.8,
               delay: 0.8,

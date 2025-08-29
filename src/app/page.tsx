@@ -50,9 +50,7 @@ export default function Home() {
         <ScrollReveal delay={0.1}>
           <SocialProof />
         </ScrollReveal>
-        <ScrollReveal delay={0.2}>
           <OurPoles />
-        </ScrollReveal>
         <Association />
         <Services />
         <ScrollReveal delay={0.1}>

@@ -7,8 +7,8 @@ export default function ScrollArrow() {
   return (
     <motion.div
       className="flex flex-col items-center justify-center mt-50 cursor-pointer z-10"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ y: 20 }}
+      animate={{ y: 0 }}
       transition={{
         duration: 0.8,
         delay: 1.2,

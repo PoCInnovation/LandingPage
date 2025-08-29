@@ -26,7 +26,7 @@ export default function FeaturedProjects({ title = "Les projets phares de notre 
   const active = useMemo(() => projects.find(p => p.id === activeId) ?? projects[0], [activeId, projects]);
 
   return (
-    <section className="mt-16">
+    <section className="md:mt-18">
       <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">{title}</h2>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">

@@ -26,8 +26,8 @@ function GlassyPoleCard({
       px-4 sm:px-4
       py-3 sm:py-2
       mx-auto
-      transition-all duration-300
-      hover:bg-[#E6E6E21F]/90
+      transition-transform duration-300
+      hover:scale-[1.02]
     "
     >
       <div className="flex-shrink-0">{icon}</div>

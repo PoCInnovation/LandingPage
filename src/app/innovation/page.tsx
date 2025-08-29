@@ -55,8 +55,8 @@ export default function InnovationPage() {
             compétence, la collaboration, et l’innovation.
           </div>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 30 }}
+            animate={{ y: 0 }}
             transition={{
               duration: 0.8,
               delay: 0.6,

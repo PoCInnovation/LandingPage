@@ -38,11 +38,8 @@ export default function GlassyButton({
         transition: { duration: 0.1 },
       }}
     >
-      <motion.div
-        className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 pointer-events-none"
-        initial={{ opacity: 0 }}
-        whileHover={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
+      <div
+        className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 pointer-events-none hover:opacity-100 opacity-0 transition-opacity duration-300"
       />
 
       <span className="relative z-10">{children}</span>

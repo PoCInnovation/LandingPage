@@ -60,59 +60,124 @@ export default function AIPoleComponent() {
   ];
 
   return (
-    <div>
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 xl:auto-rows-fr">
-        {/* Col 1: Profile Card spanning two rows */}
-        <div className="xl:row-span-2">
+    <div className="w-full">
+      {/* RESPONSIVE GRID LAYOUT */}
+      
+      {/* Mobile to XL: 3 columns x 2 rows layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 2xl:hidden gap-4 sm:gap-6">
+        {/* Row 1 */}
+        <div className="lg:col-start-1 lg:row-start-1">
           <ProfileCard
             name="Léandre Ramos"
             role="Responsable IA"
-            imageSrc="/conference.png" // Using existing image as placeholder
+            imageSrc="/conference.png"
             imageAlt="Léandre Ramos, Responsable IA"
             onContactClick={handleContactClick}
           />
         </div>
-
-        {/* Col 2: Two Stats Cards stacked */}
-        <div className="flex flex-col gap-6">
+        
+        <div className="lg:col-start-2 lg:row-start-1">
           <StatsCard
             number="20+"
             title="Projets complétés"
             description="Des modèles d'IA multimodal à la détection de deepfakes. Ces projets mêlent recherche appliquée et innovation technique."
           />
+        </div>
+        
+        <div className="lg:col-start-3 lg:row-start-1">
+          <EventImageCard
+            imageSrc="/conference.png"
+            imageAlt="Hackathon Google"
+            title="Hackathon Google"
+            date="5 Juillet 2025"
+          />
+        </div>
+        
+        {/* Row 2 */}
+        <div className="lg:col-start-1 lg:row-start-2">
+          <LargeEventCard
+            imageSrc="/conference.png"
+            imageAlt="Hackathon Mistral"
+            title="Hackathon Mistral"
+            date="19 Avril 2025"
+          />
+        </div>
+        
+        <div className="lg:col-start-2 lg:row-start-2">
           <StatsCard
             number="15+"
             title="Workshops de découverte"
             description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
           />
         </div>
-
-        {/* Col 3: Two Medium Event Cards stacked */}
-        <div className="flex flex-col gap-6">
+        
+        <div className="lg:col-start-3 lg:row-start-2">
           <EventImageCard
-            imageSrc="/conference.png" // Using existing image as placeholder
-            imageAlt="Hackathon Google"
-            title="Hackathon Google"
-            date="5 Juillet 2025"
-          />
-          <EventImageCard
-            imageSrc="/conference.png" // Using existing image as placeholder
+            imageSrc="/conference.png"
             imageAlt="Salon IA ministère de l'intérieur"
             title="Salon IA ministère de l'intérieur"
             date="8 Octobre 2024"
           />
         </div>
-
-        {/* Col 4: Large Event Card spanning two rows */}
-        <div className="xl:row-span-2">
-          <LargeEventCard
-            imageSrc="/conference.png" // Using existing image as placeholder
-            imageAlt="Hackathon Mistral"
-            title="Hackathon Mistral"
-            date="19 Avril 2025"
-          />
-        </div>
       </div>
+      
+      {/* 2XL and above: 4x2 grid layout */}
+      <div className="hidden 2xl:grid 2xl:grid-cols-4 2xl:grid-rows-2 gap-6">
+          {/* Profile Card - spans 2 rows */}
+          <div className="2xl:row-span-2 2xl:col-start-1 2xl:row-start-1">
+            <ProfileCard
+              name="Léandre Ramos"
+              role="Responsable IA"
+              imageSrc="/conference.png"
+              imageAlt="Léandre Ramos, Responsable IA"
+              onContactClick={handleContactClick}
+            />
+          </div>
+
+          {/* Stats Cards Column */}
+          <div className="2xl:col-start-2 2xl:row-start-1">
+            <StatsCard
+              number="20+"
+              title="Projets complétés"
+              description="Des modèles d'IA multimodal à la détection de deepfakes. Ces projets mêlent recherche appliquée et innovation technique."
+            />
+          </div>
+          <div className="2xl:col-start-2 2xl:row-start-2">
+            <StatsCard
+              number="15+"
+              title="Workshops de découverte"
+              description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
+            />
+          </div>
+
+          {/* Event Cards Column */}
+          <div className="2xl:col-start-3 2xl:row-start-1">
+            <EventImageCard
+              imageSrc="/conference.png"
+              imageAlt="Hackathon Google"
+              title="Hackathon Google"
+              date="5 Juillet 2025"
+            />
+          </div>
+          <div className="2xl:col-start-3 2xl:row-start-2">
+            <EventImageCard
+              imageSrc="/conference.png"
+              imageAlt="Salon IA ministère de l'intérieur"
+              title="Salon IA ministère de l'intérieur"
+              date="8 Octobre 2024"
+            />
+          </div>
+
+          {/* Large Event Card - spans 2 rows */}
+          <div className="2xl:row-span-2 2xl:col-start-4 2xl:row-start-1">
+            <LargeEventCard
+              imageSrc="/conference.png"
+              imageAlt="Hackathon Mistral"
+              title="Hackathon Mistral"
+              date="19 Avril 2025"
+            />
+          </div>
+        </div>
 
       <FeaturedProjects projects={featuredProjects} />
     </div>

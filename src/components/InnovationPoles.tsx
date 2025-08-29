@@ -145,7 +145,7 @@ export default function InnovationPoles() {
 
   return (
     <div className="w-full px-4 md:mt-20">
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="container mx-auto max-w-8xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {POLES.map((pole) => (
             <SelectablePoleCard
