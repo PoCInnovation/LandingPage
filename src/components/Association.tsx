@@ -32,7 +32,7 @@ function Association() {
             }}
           >
             <Image
-              src="/conference.png"
+              src="/poc_home_2.jpg"
               alt="Conference"
               width={583}
               height={400}

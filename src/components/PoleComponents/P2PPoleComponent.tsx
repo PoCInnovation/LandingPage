@@ -13,49 +13,48 @@ export default function P2PPoleComponent() {
 
   const featuredProjects: FeaturedProject[] = [
     {
-      id: "defi-protocol",
-      title: "DeFi Protocol",
+      id: "mev-tracker",
+      title: "MEV Tracker",
       description:
-        "Protocole de finance décentralisée pour le lending et borrowing avec gestion automatisée des liquidités et taux d'intérêt dynamiques.",
-      tools: ["Solidity", "Hardhat", "ethers.js"],
+        "Un programme qui analyse les transactions en attente sur la blockchain Ethereum et qui peut déterminer si elles ont été émises par un bot. Il est basé sur un modèle d’intelligence artificielle entraîné à détecter les transactions émises par des bots.",
+      tools: ["PyTorch", "NumPy", "Python", "Go"],
       contributors: [
-        "Lucas Leclerc",
-        "Marie Dubois",
-        "Thomas Bernard",
-        "Sophie Martin",
+        "Alexandre Grare",
+        "Elyes Toumi",
+        "Onsager He"
       ],
-      heroImage: { src: "/conference.png", alt: "DeFi Protocol hero" },
-      repoUrl: "https://github.com/PoCInnovation/defi-protocol",
+      heroImage: { src: "/p2p/mev-tracker.png", alt: "MEV Tracker hero" },
+      repoUrl: "https://github.com/PoCInnovation/MEV-Tracker",
     },
     {
-      id: "dao-toolkit",
-      title: "DAO Toolkit",
+      id: "dao",
+      title: "Superfluid-DAO",
       description:
-        "Suite d'outils pour créer et gérer des DAOs avec gouvernance on-chain, trésorerie et système de propositions.",
-      tools: ["Solidity", "React", "Web3.js"],
-      contributors: ["Alex Chen", "Julie Moreau"],
-      heroImage: { src: "/conference.png", alt: "DAO Toolkit hero" },
-      repoUrl: "#",
+        "Superfluid DAO permet aux utilisateurs de créer et d’interagir avec une DAO où la participation est essentielle. En utilisant le protocole Superfluid, les utilisateurs doivent s’impliquer activement, faute de quoi ils risquent de perdre des tokens. Cela encourage une implication active et une gouvernance participative au sein de la communauté.",
+      tools: ["Solidity", "Foundry"],
+      contributors: ["Mehdi Djendar", "mounia ARJDAL", "Lyam Gomès", "Martin Saldinger"],
+      heroImage: { src: "/p2p/superfluid-dao.png", alt: "Superfluid DAO hero" },
+      repoUrl: "https://github.com/PoCInnovation/Superfluid-DAO",
     },
     {
-      id: "nft-marketplace",
-      title: "NFT Marketplace",
+      id: "price-sensor",
+      title: "Price Sensor",
       description:
-        "Marketplace décentralisée pour NFTs avec support multi-chaînes, royalties automatiques et enchères.",
-      tools: ["Solidity", "Next.js", "IPFS"],
-      contributors: ["Pierre Durand", "Emma Wilson"],
-      heroImage: { src: "/logo_poc.png", alt: "NFT Marketplace hero" },
-      repoUrl: "#",
+        "Price sensor est une implémentation d’un capteur de prix pour le protocole Mangrove. Sa nature abstraite lui permet d’être facilement intégré dans différents types d’offres intelligentes.",
+      tools: ["Solidity", "Mangrove"],
+      contributors: ["Martin Saldinger", "Nathan Flattin", "Ismaël Fall"],
+      heroImage: { src: "/p2p/price-sensor.png", alt: "NFT Marketplace hero" },
+      repoUrl: "https://github.com/PoCInnovation/Price-Sensor",
     },
     {
-      id: "bridge-protocol",
-      title: "Bridge Protocol",
+      id: "poc-ether",
+      title: "PoCEther",
       description:
-        "Bridge cross-chain pour transfert d'assets entre Ethereum et Layer 2s avec validation optimiste.",
-      tools: ["Solidity", "Rust", "TypeScript"],
-      contributors: ["Kevin Liu", "Sarah Johnson"],
-      heroImage: { src: "/conference.png", alt: "Bridge Protocol hero" },
-      repoUrl: "#",
+        "PoCEther est une plateforme de challenges en sécurité dédiée à la blockchain. Elle permet aux utilisateurs d’explorer et de résoudre des exercices pratiques couvrant différentes vulnérabilités et attaques possibles sur des smart contracts.",
+      tools: ["Solidity", "Truffle", "React"],
+      contributors: ["Lucas Louis", "Matéo Viel"],
+      heroImage: { src: "/p2p/pocether.png", alt: "Bridge Protocol hero" },
+      repoUrl: "https://github.com/PoCInnovation/PoCEther",
     },
   ];
 
@@ -81,19 +80,19 @@ export default function P2PPoleComponent() {
           description="Des workshops couvrant toutes les bases : Ethereum, smart contracts en Solidity, gestion de tokens, DAOs, sécurité et interactions on-chain."
         />
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/p2p/ethglobal.jpg"
           imageAlt="Hackathon ETHGlobal Cannes"
           title="Hackathon ETHGlobal Cannes"
           date="4 Juillet 2025"
         />
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/p2p/haks.jpg"
           imageAlt="Hackathon Haks"
           title="Hackathon Haks"
           date="12 Mai 2023"
         />
         <LargeEventCard
-          imageSrc="/conference.png"
+          imageSrc="/p2p/krypto-tour.png"
           imageAlt="Salon Krypto Tour Lyon"
           title="Salon Krypto Tour Lyon"
           date="11 octobre 2024"
@@ -129,13 +128,13 @@ export default function P2PPoleComponent() {
         
         {/* Event Cards in bottom row */}
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/p2p/ethglobal.jpg"
           imageAlt="Hackathon ETHGlobal Cannes"
           title="Hackathon ETHGlobal Cannes"
           date="4 Juillet 2025"
         />
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/p2p/haks.jpg"
           imageAlt="Hackathon Haks"
           title="Hackathon Haks"
           date="12 Mai 2023"
@@ -144,7 +143,7 @@ export default function P2PPoleComponent() {
         {/* Large Event Card spans full width */}
         <div className="col-span-2">
           <LargeEventCard
-            imageSrc="/conference.png"
+            imageSrc="/p2p/krypto-tour.png"
             imageAlt="Salon Krypto Tour Lyon"
             title="Salon Krypto Tour Lyon"
             date="11 octobre 2024"
@@ -182,13 +181,13 @@ export default function P2PPoleComponent() {
         {/* Event Cards - Column 3 */}
         <div className="col-span-1 grid grid-rows-2 gap-4 2xl:gap-6">
           <EventImageCard
-            imageSrc="/conference.png"
+            imageSrc="/p2p/ethglobal.jpg"
             imageAlt="Hackathon ETHGlobal Cannes"
             title="Hackathon ETHGlobal Cannes"
             date="4 Juillet 2025"
           />
           <EventImageCard
-            imageSrc="/conference.png"
+            imageSrc="/p2p/haks.jpg"
             imageAlt="Hackathon Haks"
             title="Hackathon Haks"
             date="12 Mai 2023"
@@ -198,7 +197,7 @@ export default function P2PPoleComponent() {
         {/* Large Event Card - Column 4 */}
         <div className="col-span-1">
           <LargeEventCard
-            imageSrc="/conference.png"
+            imageSrc="/p2p/krypto-tour.png"
             imageAlt="Salon Krypto Tour Lyon"
             title="Salon Krypto Tour Lyon"
             date="11 octobre 2024"

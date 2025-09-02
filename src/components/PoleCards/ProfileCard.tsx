@@ -33,7 +33,7 @@ export default function ProfileCard({ name, role, imageSrc, imageAlt, onContactC
         {/* Right side - Contact Button */}
         <button
           onClick={onContactClick}
-          className="px-4 py-2 bg-transparent border border-white text-white rounded-lg hover:bg-white/10 transition-colors text-sm"
+          className="px-4 py-2 bg-transparent border border-white text-white rounded-lg hover:bg-white/10 transition-colors text-sm cursor-pointer"
         >
           Contact
         </button>

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import GlassyNavbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
@@ -11,7 +10,6 @@ export default function InnovationPage() {
   return (
     <main>
       <section className="relative min-h-screen flex flex-col items-center overflow-hidden bg-background-main">
-        <GlassyNavbar />
         <div className="absolute inset-0 w-full h-full">
           <div className="absolute top-0 left-0 md:w-full w-[400vw] overflow-hidden z-[2]">
             <Image

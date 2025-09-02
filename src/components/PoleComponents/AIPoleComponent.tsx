@@ -24,38 +24,38 @@ export default function AIPoleComponent() {
         "Antoine Béa",
         "Manmohit-Singh Lal",
       ],
-      heroImage: { src: "/conference.png", alt: "Cyrebro hero" },
+      heroImage: { src: "/ai/cyrebro.png", alt: "Cyrebro hero" },
       repoUrl: "https://github.com/PoCInnovation/cyrebro",
     },
     {
-      id: "deepvision",
-      title: "DeepVision",
+      id: "open-zero",
+      title: "Open-Zero",
       description:
-        "Pipeline de classification et détection d'images en production avec optimisation quantization-aware et suivi des métriques.",
-      tools: ["PyTorch", "FastAPI", "ONNX Runtime"],
-      contributors: ["Alice Martin", "Julien Caron"],
-      heroImage: { src: "/conference.png", alt: "DeepVision hero" },
-      repoUrl: "#",
+        "Open-Zero est un projet de recherche open source visant à reproduire les méthodes AlphaZero et MuZero de DeepMind pour l’entraînement d’une IA au jeu d’échecs, en s’appuyant sur l’apprentissage par renforcement profond (notamment l’algorithme A3C).",
+      tools: ["PyTorch", "Python", "AC3"],
+      contributors: ["Gino Ambigaipalan", "Jean-Baptiste Debize", "Nell Fauveau", "Bogdan Guillemoles"],
+      heroImage: { src: "/ai/deep-poc.png", alt: "Open-Zero hero" },
+      repoUrl: "https://github.com/PoCInnovation/Open-Zero",
     },
     {
-      id: "textgen-studio",
-      title: "TextGen Studio",
+      id: "infinalys",
+      title: "Infinalys",
       description:
-        "Studio d'expérimentation pour l'IA générative: prompts, RAG, outils et évaluation automatique de la qualité des réponses.",
-      tools: ["TypeScript", "Next.js", "LangChain"],
-      contributors: ["Camille Dupont", "Théo Garnier"],
-      heroImage: { src: "/logo_poc.png", alt: "TextGen Studio hero" },
-      repoUrl: "#",
+        "infinalys est une application web de prévision boursière qui combine visualisation des données de marché et prédictions générées par une IA en apprentissage profond. Facile à déployer grâce à Docker, elle offre une interface moderne et interactive pour explorer les tendances financières.",
+      tools: ["React", "Yahoo finance", "TensorFlow", "Docker"],
+      contributors: ["Alexandre Chetrit", "Coline Seguret", "Grégoire Brasseur", "Robin Christol", "Paul Monnery"],
+      heroImage: { src: "/ai/infinalys.png", alt: "Infinalys hero" },
+      repoUrl: "https://github.com/PoCInnovation/Infinalys2",
     },
     {
-      id: "audio-lab",
-      title: "AudioLab",
+      id: "deep-poc",
+      title: "Deep-PoC",
       description:
-        "Analyse audio et diarisation de locuteurs avec segmentation automatique et restitution en timeline interactive.",
-      tools: ["Python", "Whisper", "NumPy"],
-      contributors: ["Nina Bernard", "Paul Richard"],
-      heroImage: { src: "/conference.png", alt: "AudioLab hero" },
-      repoUrl: "#",
+        "Deep-PoC est un outil de détection de deepfakes capable d’identifier les contenus manipulés (images ou vidéos) grâce à l’intelligence artificielle. Il permet d’analyser et de signaler les falsifications visuelles afin de lutter contre la désinformation et les usages malveillants.",
+      tools: ["Python", "PyTorch", "Django", "Matplotlib"],
+      contributors: ["Mikael Vallenet", "Valentin De Matos", "Victor Guyot"],
+      heroImage: { src: "/ai/Deep-Poc.png", alt: "Deep-PoC hero" },
+      repoUrl: "https://github.com/PoCInnovation/Deep-PoC",
     },
   ];
 
@@ -81,19 +81,19 @@ export default function AIPoleComponent() {
           description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
         />
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/ai/hackathon-google.jpeg"
           imageAlt="Hackathon Google"
           title="Hackathon Google"
           date="5 Juillet 2025"
         />
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/ai/siami.jpeg"
           imageAlt="Salon IA ministère de l'intérieur"
           title="Salon IA ministère de l'intérieur"
           date="8 Octobre 2024"
         />
         <LargeEventCard
-          imageSrc="/conference.png"
+          imageSrc="/ai/mistral-hackathon.jpeg"
           imageAlt="Hackathon Mistral"
           title="Hackathon Mistral"
           date="19 Avril 2025"
@@ -129,13 +129,13 @@ export default function AIPoleComponent() {
         
         {/* Event Cards in bottom row */}
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/ai/siami.jpeg"
           imageAlt="Salon IA ministère de l'intérieur"
           title="Salon IA ministère de l'intérieur"
           date="8 Octobre 2024"
         />
         <EventImageCard
-          imageSrc="/conference.png"
+          imageSrc="/ai/hackathon-google.jpeg"
           imageAlt="Hackathon Google"
           title="Hackathon Google"
           date="5 Juillet 2025"
@@ -144,7 +144,7 @@ export default function AIPoleComponent() {
         {/* Large Event Card spans full width */}
         <div className="col-span-2">
           <LargeEventCard
-            imageSrc="/conference.png"
+            imageSrc="/ai/mistral-hackathon.jpeg"
             imageAlt="Hackathon Mistral"
             title="Hackathon Mistral"
             date="19 Avril 2025"
@@ -182,13 +182,13 @@ export default function AIPoleComponent() {
         {/* Event Cards - Column 3 */}
         <div className="col-span-1 grid grid-rows-2 gap-4 2xl:gap-6">
           <EventImageCard
-            imageSrc="/conference.png"
+            imageSrc="/ai/hackathon-google.jpeg"
             imageAlt="Hackathon Google"
             title="Hackathon Google"
             date="5 Juillet 2025"
           />
           <EventImageCard
-            imageSrc="/conference.png"
+            imageSrc="/ai/siami.jpeg"
             imageAlt="Salon IA ministère de l'intérieur"
             title="Salon IA ministère de l'intérieur"
             date="8 Octobre 2024"
@@ -198,7 +198,7 @@ export default function AIPoleComponent() {
         {/* Large Event Card - Column 4 */}
         <div className="col-span-1">
           <LargeEventCard
-            imageSrc="/conference.png"
+            imageSrc="/ai/mistral-hackathon.jpeg"
             imageAlt="Hackathon Mistral"
             title="Hackathon Mistral"
             date="19 Avril 2025"
