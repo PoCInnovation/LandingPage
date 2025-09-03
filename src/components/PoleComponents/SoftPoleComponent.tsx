@@ -81,22 +81,22 @@ export default function SoftwarePoleComponent() {
           description="Découverte des frameworks les plus utilisés, les différents langages, les bases de données, tests, déploiement et bien plus encore."
         />
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Hackathon Google"
-          title="Hackathon Google"
-          date="5 Juillet 2025"
+          imageSrc="/soft/nasa_hackathon_3.png"
+          imageAlt="Hackathon Nasa"
+          title="Hackathon Nasa Space apps challenge"
+          date="3 octobre 2021"
         />
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Salon IA ministère de l'intérieur"
-          title="Salon IA ministère de l'intérieur"
-          date="8 Octobre 2024"
+          imageSrc="/soft/vivatech.jpg"
+          imageAlt="Salon Vivatech"
+          title="Salon Vivatech"
+          date="22 mai 2024"
         />
         <LargeEventCard
-          imageSrc="/conference.png"
-          imageAlt="Hackathon Mistral"
-          title="Hackathon Mistral"
-          date="19 Avril 2025"
+          imageSrc="/soft/hackathon_facebook.jpeg"
+          imageAlt="Hackathon facebook"
+          title="Hackathon facebook"
+          date="novembre 2018"
         />
       </div>
       
@@ -129,25 +129,25 @@ export default function SoftwarePoleComponent() {
         
         {/* Event Cards in bottom row */}
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Salon IA ministère de l'intérieur"
-          title="Salon IA ministère de l'intérieur"
-          date="8 Octobre 2024"
+          imageSrc="/soft/vivatech.jpg"
+          imageAlt="Salon Vivatech"
+          title="Salon Vivatech"
+          date="22 mai 2024"
         />
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Hackathon Google"
-          title="Hackathon Google"
-          date="5 Juillet 2025"
+          imageSrc="/soft/nasa_hackathon_3.png"
+          imageAlt="Hackathon Nasa"
+          title="Hackathon Nasa Space apps challenge"
+          date="3 octobre 2021"
         />
         
         {/* Large Event Card spans full width */}
         <div className="col-span-2">
           <LargeEventCard
-            imageSrc="/conference.png"
-            imageAlt="Hackathon Mistral"
-            title="Hackathon Mistral"
-            date="19 Avril 2025"
+            imageSrc="/soft/hackathon_facebook.jpeg"
+            imageAlt="Hackathon facebook"
+            title="Hackathon facebook"
+            date="novembre 2018"
           />
         </div>
       </div>
@@ -182,26 +182,26 @@ export default function SoftwarePoleComponent() {
         {/* Event Cards - Column 3 */}
         <div className="col-span-1 grid grid-rows-2 gap-4 2xl:gap-6">
           <EventImageCard
-            imageSrc="/conference.png"
-            imageAlt="Hackathon Google"
-            title="Hackathon Google"
-            date="5 Juillet 2025"
+            imageSrc="/soft/nasa_hackathon_3.png"
+            imageAlt="Hackathon Nasa"
+            title="Hackathon Nasa Space apps challenge"
+            date="3 octobre 2021"
           />
           <EventImageCard
-            imageSrc="/conference.png"
-            imageAlt="Salon IA ministère de l'intérieur"
-            title="Salon IA ministère de l'intérieur"
-            date="8 Octobre 2024"
+            imageSrc="/soft/vivatech.jpg"
+            imageAlt="Salon Vivatech"
+            title="Salon Vivatech"
+            date="22 mai 2024"
           />
         </div>
         
         {/* Large Event Card - Column 4 */}
         <div className="col-span-1">
           <LargeEventCard
-            imageSrc="/conference.png"
-            imageAlt="Hackathon Mistral"
-            title="Hackathon Mistral"
-            date="19 Avril 2025"
+            imageSrc="/soft/hackathon_facebook.jpeg"
+            imageAlt="Hackathon facebook"
+            title="Hackathon facebook"
+            date="novembre 2018"
           />
         </div>
       </div>

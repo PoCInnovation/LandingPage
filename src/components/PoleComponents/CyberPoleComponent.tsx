@@ -80,22 +80,22 @@ export default function CyberPoleComponent() {
           description="Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie et bien plus."
         />
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Hackathon Google"
-          title="Hackathon Google"
-          date="5 Juillet 2025"
+          imageSrc="/cyber/ec2.jpg"
+          imageAlt="European Cyber Cup"
+          title="European Cyber Cup"
+          date="8 septembre 2021"
         />
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Salon IA ministère de l'intérieur"
-          title="Salon IA ministère de l'intérieur"
-          date="8 Octobre 2024"
+          imageSrc="/cyber/incyber.png"
+          imageAlt="Salon InCyber"
+          title="Salon InCyber"
+          date="1 Avril 2025"
         />
         <LargeEventCard
-          imageSrc="/conference.png"
-          imageAlt="Hackathon Mistral"
-          title="Hackathon Mistral"
-          date="19 Avril 2025"
+          imageSrc="/cyber/pathwar.png"
+          imageAlt="CTF Pathwar"
+          title="CTF Pathwar"
+          date="25 Mai 2023"
         />
       </div>
       
@@ -128,25 +128,25 @@ export default function CyberPoleComponent() {
         
         {/* Event Cards in bottom row */}
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Salon IA ministère de l'intérieur"
-          title="Salon IA ministère de l'intérieur"
-          date="8 Octobre 2024"
+          imageSrc="/cyber/incyber.png"
+          imageAlt="Salon InCyber"
+          title="Salon InCyber"
+          date="1 Avril 2025"
         />
         <EventImageCard
-          imageSrc="/conference.png"
-          imageAlt="Hackathon Google"
-          title="Hackathon Google"
-          date="5 Juillet 2025"
+          imageSrc="/cyber/ec2.jpg"
+          imageAlt="European Cyber Cup"
+          title="European Cyber Cup"
+          date="8 septembre 2021"
         />
         
         {/* Large Event Card spans full width */}
         <div className="col-span-2">
           <LargeEventCard
-            imageSrc="/conference.png"
-            imageAlt="Hackathon Mistral"
-            title="Hackathon Mistral"
-            date="19 Avril 2025"
+            imageSrc="/cyber/pathwar.png"
+            imageAlt="CTF Pathwar"
+            title="CTF Pathwar"
+            date="25 Mai 2023"
           />
         </div>
       </div>
@@ -181,26 +181,26 @@ export default function CyberPoleComponent() {
         {/* Event Cards - Column 3 */}
         <div className="col-span-1 grid grid-rows-2 gap-4 2xl:gap-6">
           <EventImageCard
-            imageSrc="/conference.png"
-            imageAlt="Hackathon Google"
-            title="Hackathon Google"
-            date="5 Juillet 2025"
+            imageSrc="/cyber/ec2.jpg"
+            imageAlt="European Cyber Cup"
+            title="European Cyber Cup"
+            date="8 septembre 2021"
           />
           <EventImageCard
-            imageSrc="/conference.png"
-            imageAlt="Salon IA ministère de l'intérieur"
-            title="Salon IA ministère de l'intérieur"
-            date="8 Octobre 2024"
+            imageSrc="/cyber/incyber.png"
+            imageAlt="Salon InCyber"
+            title="Salon InCyber"
+            date="1 Avril 2025"
           />
         </div>
         
         {/* Large Event Card - Column 4 */}
         <div className="col-span-1">
           <LargeEventCard
-            imageSrc="/conference.png"
-            imageAlt="Hackathon Mistral"
-            title="Hackathon Mistral"
-            date="19 Avril 2025"
+            imageSrc="/cyber/pathwar.png"
+            imageAlt="CTF Pathwar"
+            title="CTF Pathwar"
+            date="25 Mai 2023"
           />
         </div>
       </div>
