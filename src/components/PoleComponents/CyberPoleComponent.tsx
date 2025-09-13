@@ -79,7 +79,7 @@ export default function CyberPoleComponent() {
       {/* Mobile: single column */}
       <div className='grid grid-cols-1 gap-4 md:hidden px-4'>
         <ProfileCard
-          name='Responsable Cyber'
+          name='Timothée Pasteau-Berthaud'
           role='Responsable Cybersécurité'
           imageSrc='/cyber/timo.png'
           imageAlt='Responsable Cybersécurité'
@@ -120,7 +120,7 @@ export default function CyberPoleComponent() {
         {/* Profile Card spans 2 rows */}
         <div className='row-span-2'>
           <ProfileCard
-            name='Responsable Cyber'
+            name='Timothée Pasteau-Berthaud'
             role='Responsable Cybersécurité'
             imageSrc='/cyber/timo.png'
             imageAlt='Responsable Cybersécurité'
@@ -172,7 +172,7 @@ export default function CyberPoleComponent() {
         {/* Profile Card - Column 1 */}
         <div className='col-span-1'>
           <ProfileCard
-            name='Responsable Cyber'
+            name='Timothée Pasteau-Berthaud'
             role='Responsable Cybersécurité'
             imageSrc='/cyber/timo.png'
             imageAlt='Responsable Cybersécurité'

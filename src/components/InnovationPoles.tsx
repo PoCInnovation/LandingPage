@@ -16,7 +16,7 @@ const POLES = [
     iconBg: 'bg-gradient-to-tr from-[#AA222B] to-[#5E1265]',
     borderColor: 'rgba(255, 0, 123, 0.5)',
     description:
-      'Nous explorons le machine learning, le NLP et l\'IA générative et plein d\'autres architectures pour créer des outils utiles et innovants.',
+      'Nous explorons le machine learning, l\'IA générative et plein d\'autres architectures pour créer des outils utiles et innovants.',
     component: AIPoleComponent,
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#AA222B] to-[#5E1265] h-14 w-14 rounded-sm'>
@@ -146,19 +146,20 @@ export default function InnovationPoles() {
     <div className='w-full md:mt-20'>
       <div className='relative z-10'>
         <div className='px-4 container mx-auto max-w-8xl'>
-          <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-12 place-items-stretch'>
             {POLES.map(pole => (
-              <SelectablePoleCard
-                key={pole.key}
-                title={pole.title}
-                subtitle={pole.subtitle}
-                description={pole.description}
-                selected={pole.key === selected}
-                selectedGradientClass={pole.gradient}
-                borderColor={pole.borderColor}
-                onClick={() => setSelected(pole.key)}
-                icon={pole.icon}
-              />
+              <div key={pole.key} className='relative overflow-visible'>
+                <SelectablePoleCard
+                  title={pole.title}
+                  subtitle={pole.subtitle}
+                  description={pole.description}
+                  selected={pole.key === selected}
+                  selectedGradientClass={pole.gradient}
+                  borderColor={pole.borderColor}
+                  onClick={() => setSelected(pole.key)}
+                  icon={pole.icon}
+                />
+              </div>
             ))}
           </div>
         </div>
