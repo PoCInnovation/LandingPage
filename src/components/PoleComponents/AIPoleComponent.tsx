@@ -1,5 +1,7 @@
+import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React from 'react'
+import React, { useState } from 'react'
+import ContactModal from '../ContactModal'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
@@ -7,10 +9,27 @@ import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
 export default function AIPoleComponent() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const contacts: ContactPerson[] = [
+    {
+      name: 'Manmohit-Singh Lal',
+      email: 'manmohit.singh-lal@poc-innovation.fr',
+      linkedinUrl: 'https://www.linkedin.com/in/manmohit-singh-l-300b50356/',
+    },
+    {
+      name: 'Sacha Henneveux',
+      email: 'sacha.henneveux@poc-innovation.fr',
+      linkedinUrl: 'https://www.linkedin.com/in/sacha-henneveux-084052304',
+    },
+  ]
+
   const handleContactClick = () => {
-    // Create and trigger mailto link with window.open for better browser compatibility
-    const mailtoUrl = 'mailto:contact@poc-innovation.fr?subject=Contact%20AI%20Team'
-    window.open(mailtoUrl, '_self')
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   const featuredProjects: FeaturedProject[] = [
@@ -66,10 +85,10 @@ export default function AIPoleComponent() {
       {/* Mobile: single column */}
       <div className='grid grid-cols-1 gap-4 md:hidden px-4'>
         <ProfileCard
-          name='Sacha Henneveux et Manmohit-Singh Lal'
+          name='Manmohit-Singh Lal et Sacha Henneveux'
           role='Responsables IA'
           imageSrc='/ai/ia_respo.png'
-          imageAlt='Sacha Henneveux et Manmohit-Singh Lal, Responsables IA'
+          imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
           onContactClick={handleContactClick}
         />
         <StatsCard
@@ -107,10 +126,10 @@ export default function AIPoleComponent() {
         {/* Profile Card spans 2 rows */}
         <div className='row-span-2'>
           <ProfileCard
-            name='Sacha Henneveux et Manmohit-Singh Lal'
+            name='Manmohit-Singh Lal et Sacha Henneveux'
             role='Responsables IA'
             imageSrc='/ai/ia_respo.png'
-            imageAlt='Sacha Henneveux et Manmohit-Singh Lal, Responsables IA'
+            imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
             onContactClick={handleContactClick}
           />
         </div>
@@ -159,10 +178,10 @@ export default function AIPoleComponent() {
         {/* Profile Card - Column 1 */}
         <div className='col-span-1'>
           <ProfileCard
-            name='Sacha Henneveux et Manmohit-Singh Lal'
+            name='Manmohit-Singh Lal et Sacha Henneveux'
             role='Responsables IA'
             imageSrc='/ai/ia_respo.png'
-            imageAlt='Sacha Henneveux et Manmohit-Singh Lal, Responsables IA'
+            imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
             onContactClick={handleContactClick}
           />
         </div>
@@ -211,6 +230,14 @@ export default function AIPoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Contacter l'équipe IA"
+        contacts={contacts}
+      />
     </div>
   )
 }

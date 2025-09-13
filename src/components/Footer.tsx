@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AssociationContactModal from './AssociationContactModal'
 import FadeInImage from './FadeInImage'
 import GlassyButton from './GlassyButton'
 
 function Footer() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <footer className='relative w-full py-6 sm:py-8 lg:py-12 mt-12 sm:mt-16 lg:mt-20'>
       <div className='relative w-full h-[2px] mb-6 sm:mb-8'>
@@ -53,9 +56,7 @@ function Footer() {
 
           <div className='flex justify-center order-3 lg:order-2'>
             <GlassyButton
-              onClick={() => {
-                window.location.href = 'mailto:contact@poc-innovation.fr'
-              }}
+              onClick={() => setIsContactModalOpen(true)}
             >
               <span className='text-foreground'>Nous contacter</span>
             </GlassyButton>
@@ -71,6 +72,12 @@ function Footer() {
         </div>
         */}
       </div>
+
+      {/* Association Contact Modal */}
+      <AssociationContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </footer>
   )
 }

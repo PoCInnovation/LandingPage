@@ -1,5 +1,7 @@
+import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React from 'react'
+import React, { useState } from 'react'
+import ContactModal from '../ContactModal'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
@@ -7,10 +9,27 @@ import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
 export default function P2PPoleComponent() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const contacts: ContactPerson[] = [
+    {
+      name: 'Aurelien Demeusy',
+      email: 'aurelien.demeusy@poc-innovation.fr',
+      linkedinUrl: 'https://www.linkedin.com/in/aurelien-demeusy/',
+    },
+    {
+      name: 'Jules Lordet',
+      email: 'jules.lordet@poc-innovation.fr',
+      linkedinUrl: 'https://www.linkedin.com/in/jules-lordet-9798a12b3/',
+    },
+  ]
+
   const handleContactClick = () => {
-    // Create and trigger mailto link with window.open for better browser compatibility
-    const mailtoUrl = 'mailto:contact@poc-innovation.fr?subject=Contact%20Blockchain%20Team'
-    window.open(mailtoUrl, '_self')
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   const featuredProjects: FeaturedProject[] = [
@@ -210,6 +229,14 @@ export default function P2PPoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Contacter l'équipe Blockchain"
+        contacts={contacts}
+      />
     </div>
   )
 }

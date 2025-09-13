@@ -1,5 +1,7 @@
+import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React from 'react'
+import React, { useState } from 'react'
+import ContactModal from '../ContactModal'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
@@ -7,10 +9,27 @@ import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
 export default function SoftwarePoleComponent() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const contacts: ContactPerson[] = [
+    {
+      name: 'Laurent Gonzalez',
+      email: 'laurent.gonzalez@poc-innovation.fr',
+      linkedinUrl: 'https://www.linkedin.com/in/laurent-gonzalez-epitech/',
+    },
+    {
+      name: 'Milo Kowalska',
+      email: 'milo.kowalska@poc-innovation.fr',
+      linkedinUrl: 'https://www.linkedin.com/in/milo-kowalska-6a22472a3/',
+    },
+  ]
+
   const handleContactClick = () => {
-    // Create and trigger mailto link with window.open for better browser compatibility
-    const mailtoUrl = 'mailto:contact@poc-innovation.fr?subject=Contact%20Software%20Team'
-    window.open(mailtoUrl, '_self')
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   const featuredProjects: FeaturedProject[] = [
@@ -211,6 +230,14 @@ export default function SoftwarePoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title="Contacter l'équipe Software"
+        contacts={contacts}
+      />
     </div>
   )
 }

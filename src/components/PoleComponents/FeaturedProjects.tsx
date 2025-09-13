@@ -37,6 +37,7 @@ export default function FeaturedProjects({ title = 'Les projets phares de notre 
               src={active.heroImage.src}
               alt={active.heroImage.alt}
               fill
+              sizes='(max-width: 1024px) 100vw, 58vw'
               className='object-cover'
               priority
             />

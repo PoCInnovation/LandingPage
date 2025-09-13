@@ -2,10 +2,14 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useState } from 'react'
+import AssociationContactModal from './AssociationContactModal'
 import GlassyButton from './GlassyButton'
 import PoCButton from './PocButton'
 
 export function Hero() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <>
       <div className='container-custom relative z-10 mt-36 md:mt-72'>
@@ -110,15 +114,19 @@ export function Hero() {
               En savoir plus
             </GlassyButton>
             <PoCButton
-              onClick={() => {
-                window.location.href = 'mailto:contact@poc-innovation.fr'
-              }}
+              onClick={() => setIsContactModalOpen(true)}
             >
               Nous contacter
             </PoCButton>
           </motion.div>
         </div>
       </div>
+
+      {/* Association Contact Modal */}
+      <AssociationContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </>
   )
 }
