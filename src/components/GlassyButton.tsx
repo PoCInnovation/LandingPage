@@ -1,15 +1,15 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
 export default function GlassyButton({
   children,
   onClick,
   className,
 }: {
-  children?: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
+  children?: React.ReactNode
+  onClick?: () => void
+  className?: string
 }) {
   return (
     <motion.button
@@ -39,10 +39,10 @@ export default function GlassyButton({
       }}
     >
       <div
-        className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 pointer-events-none hover:opacity-100 opacity-0 transition-opacity duration-300"
+        className='absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 pointer-events-none hover:opacity-100 opacity-0 transition-opacity duration-300'
       />
 
-      <span className="relative z-10">{children}</span>
+      <span className='relative z-10'>{children}</span>
     </motion.button>
-  );
+  )
 }

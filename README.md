@@ -1,0 +1,13 @@
+Pour générer les images des repos:
+- sur google ai studio avec le prompt suivant et une image du pull poc blanc et une photo de la personne debout, bien éclairée qui regarde l'objectif :
+```Turn the uploaded photo into a professional studio head-and-shoulders portrait. Preserve the face 1:1 (identity, proportions, skin tone, hair, and overall look) with zero alterations.
+Add only a subtle, natural smile: a gentle, professional expression without exaggeration, consistent with a corporate portrait. Do not modify facial proportions or features beyond this small change.
+Replace the current top with a plain white cotton crewneck hoodie's sweatshirt (basic pullover with hoodie, medium-weight cotton). The fabric should look natural, with realistic folds, seams, and texture. Apply the provided PNG design on the left chest area, in the typical logo position. Ensure the logo is at correct scale, crisp, no distortion, and integrated with the folds of the sweatshirt so it looks naturally printed or embroidered.
+Background: uniform matte black or professional studio-style dark backdrop, with no distractions with a little drak blue reflect form the bottom left and red reflect on the top right. reflect on the background not the guys, like glow lamp the reflect i say.
+Lighting: softbox key at 45°, subtle fill (-1 EV), faint rim light for edge separation; controlled contrast, no harsh speculars.
+Photographic quality: simulate the look of a full-frame camera with an 85mm lens at f/2.8–f/4 aperture. Ensure eyes are tack-sharp, with natural depth of field and subtle background falloff. HDR tonal range, ultra-detailed texture, and 8K resolution output.
+Framing: vertical portrait aspect ratio (4:5). Crop to head and shoulders, with consistent headroom above the subject.
+Do not change body shape, hands, hairstyle, or add any accessories. No painterly or comic stylization. The result must look indistinguishable from a high-quality professional studio photograph.
+```
+
+Faire avec les deux respo puis 2eme prompt avec les 2 images des respos : ```Combine these two photos into one single picture. Place both persons side by side, close to each other. Do not change anything about their appearance, clothing, reflections, or background. Keep the same style as the original photos: both wearing white hoodies, with a plain uniform background. The only modification should be that the two individuals appear together in the same image, standing next to each other naturally, aligned at the same scale and proportions. The final result must look seamless, as if the photo was originally taken this way.```

@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 
 export default function PoCButton({
   children,
   onClick,
   className,
-  bgColor = "bg-white",
-  textColor = "text-black",
+  bgColor = 'bg-white',
+  textColor = 'text-black',
 }: {
-  children?: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-  bgColor?: string;
-  textColor?: string;
+  children?: React.ReactNode
+  onClick?: () => void
+  className?: string
+  bgColor?: string
+  textColor?: string
 }) {
   return (
     <motion.button
@@ -56,16 +56,16 @@ export default function PoCButton({
         `,
       }}
     >
-      <div className="absolute inset-0 rounded-3xl p-0.5">
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500 via-purple-500 to-red-600 blur-sm opacity-60" />
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-400 from-10% via-purple-400 via-50% to-red-500 to-90%" />
+      <div className='absolute inset-0 rounded-3xl p-0.5'>
+        <div className='absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500 via-purple-500 to-red-600 blur-sm opacity-60' />
+        <div className='absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-400 from-10% via-purple-400 via-50% to-red-500 to-90%' />
       </div>
 
       <div className={`absolute inset-0.5 rounded-3xl ${bgColor}`} />
 
-      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gray-100/20 to-gray-50/10 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+      <div className='absolute inset-0 rounded-3xl bg-gradient-to-br from-gray-100/20 to-gray-50/10 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none' />
 
       <span className={`relative z-10 ${textColor}`}>{children}</span>
     </motion.button>
-  );
+  )
 }

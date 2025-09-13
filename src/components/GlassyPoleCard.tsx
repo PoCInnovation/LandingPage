@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react'
 
 function GlassyPoleCard({
   icon,
   title,
   description,
 }: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
+  icon: React.ReactNode
+  title: string
+  description: string
 }) {
   return (
     <div
-      className="
+      className='
       bg-[#E2E2E21A]/70
       rounded-xl
       border
@@ -28,18 +28,18 @@ function GlassyPoleCard({
       mx-auto
       transition-transform duration-300
       hover:scale-[1.02]
-    "
+    '
     >
-      <div className="flex-shrink-0">{icon}</div>
-      <div className="flex-1 flex flex-col px-4 sm:px-3 justify-center text-left min-w-0">
-        <h3 className="text-base sm:text-md text-foreground font-semibold truncate">
+      <div className='flex-shrink-0'>{icon}</div>
+      <div className='flex-1 flex flex-col px-4 sm:px-3 justify-center text-left min-w-0'>
+        <h3 className='text-base sm:text-md text-foreground font-semibold truncate'>
           {title}
         </h3>
-        <p className="text-sm sm:text-xs text-foreground/70 line-clamp-2 sm:line-clamp-1 leading-tight mt-2">
+        <p className='text-sm sm:text-xs text-foreground/70 line-clamp-2 sm:line-clamp-1 leading-tight mt-2'>
           {description}
         </p>
       </div>
     </div>
-  );
+  )
 }
-export default GlassyPoleCard;
+export default GlassyPoleCard

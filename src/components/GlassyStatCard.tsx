@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 function GlassyStatCard({
   className,
@@ -6,10 +6,10 @@ function GlassyStatCard({
   title,
   description,
 }: {
-  className?: string;
-  statText: string;
-  title: string;
-  description: string;
+  className?: string
+  statText: string
+  title: string
+  description: string
 }) {
   return (
     <div
@@ -27,22 +27,22 @@ function GlassyStatCard({
         ${className}
       `}
     >
-      <div className="p-2 sm:p-3 lg:p-4">
-        <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-tr from-[#7989BC] to-[#C2D0FF] text-transparent bg-clip-text">
+      <div className='p-2 sm:p-3 lg:p-4'>
+        <span className='text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-tr from-[#7989BC] to-[#C2D0FF] text-transparent bg-clip-text'>
           {statText}
         </span>
       </div>
 
-      <div className="flex flex-col items-start justify-center text-left flex-1">
-        <h3 className="text-base sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">
+      <div className='flex flex-col items-start justify-center text-left flex-1'>
+        <h3 className='text-base sm:text-xl font-semibold text-foreground mb-1 sm:mb-2'>
           {title}
         </h3>
-        <p className="text-xs text-foreground/70 line-clamp-3 leading-relaxed">
+        <p className='text-xs text-foreground/70 line-clamp-3 leading-relaxed'>
           {description}
         </p>
       </div>
     </div>
-  );
+  )
 }
 
-export default GlassyStatCard;
+export default GlassyStatCard

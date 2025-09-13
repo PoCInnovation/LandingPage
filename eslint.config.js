@@ -1,4 +1,4 @@
-import antfu from "@antfu/eslint-config";
+import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
@@ -8,7 +8,7 @@ export default antfu(
     stylistic: {
       indent: 2,
       semi: false,
-      quotes: "single",
+      quotes: 'single',
       jsx: true,
     },
     formatters: {
@@ -17,16 +17,16 @@ export default antfu(
   },
   {
     rules: {
-      "ts/consistent-type-definitions": ["error", "type"],
-      "no-console": ["warn"],
-      "antfu/no-top-level-await": ["off"],
-      "node/prefer-global/process": ["off"],
-      "node/no-process-env": ["error"],
-      "style/jsx-quotes": ["error", "prefer-single"],
-      "react/prefer-destructuring-assignment": ["off"],
-      "react-hooks/exhaustive-deps": ["warn"],
-      "react-refresh/only-export-components": ["warn"],
+      'ts/consistent-type-definitions': ['error', 'type'],
+      'no-console': ['warn'],
+      'antfu/no-top-level-await': ['off'],
+      'node/prefer-global/process': ['off'],
+      'node/no-process-env': ['error'],
+      'style/jsx-quotes': ['error', 'prefer-single'],
+      'react/prefer-destructuring-assignment': ['off'],
+      'react-hooks/exhaustive-deps': ['warn'],
+      'react-refresh/only-export-components': ['warn'],
     },
-    ignores: ["**/fixtures", "**/.next", "**/dist", "**/build"],
+    ignores: ['**/fixtures', '**/.next', '**/dist', '**/build'],
   },
-);
+)

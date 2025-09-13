@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 
 export default function ScrollArrow() {
   return (
     <motion.div
-      className="flex flex-col items-center justify-center mt-20 md:mt-50 cursor-pointer z-10"
+      className='flex flex-col items-center justify-center mt-20 md:mt-50 cursor-pointer z-10'
       initial={{ y: 20 }}
       animate={{ y: 0 }}
       transition={{
@@ -16,9 +16,9 @@ export default function ScrollArrow() {
       }}
       onClick={() => {
         // Smooth scroll to the next section
-        const socialProof = document.querySelector('[data-section="social-proof"]');
+        const socialProof = document.querySelector('[data-section="social-proof"]')
         if (socialProof) {
-          socialProof.scrollIntoView({ behavior: 'smooth' });
+          socialProof.scrollIntoView({ behavior: 'smooth' })
         }
       }}
     >
@@ -29,14 +29,14 @@ export default function ScrollArrow() {
         transition={{
           duration: 2,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: 'easeInOut',
         }}
       >
-        <ChevronDown 
-          className="w-10 h-10 text-foreground" 
+        <ChevronDown
+          className='w-10 h-10 text-foreground'
           strokeWidth={2}
         />
       </motion.div>
     </motion.div>
-  );
-} 
+  )
+}
