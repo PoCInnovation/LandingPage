@@ -2,13 +2,27 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Linkedin } from 'lucide-react'
 
 type AssociationContactModalProps = {
   isOpen: boolean
   onClose: () => void
+  title?: string
+  organizationName?: string
+  email?: string
+  linkedinUrl?: string
+  linkedinLabel?: string
 }
 
-export default function AssociationContactModal({ isOpen, onClose }: AssociationContactModalProps) {
+export default function AssociationContactModal({
+  isOpen,
+  onClose,
+  title = 'Contacter PoC Innovation',
+  organizationName = 'PoC Innovation',
+  email = 'contact@poc-innovation.fr',
+  linkedinUrl = 'https://linkedin.com/company/poc-innovation',
+  linkedinLabel = 'PoC Innovation'
+}: AssociationContactModalProps) {
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose()
@@ -48,15 +62,15 @@ export default function AssociationContactModal({ isOpen, onClose }: Association
 
         {/* Modal content */}
         <div className='text-white'>
-          <h2 className='text-xl font-semibold mb-4 pr-8'>Contacter PoC Innovation</h2>
+          <h2 className='text-xl font-semibold mb-4 pr-8'>{title}</h2>
 
           <div className='bg-white/5 rounded-lg p-4 border border-white/10'>
-            <h3 className='text-lg font-medium mb-4 break-words'>PoC Innovation</h3>
+            <h3 className='text-lg font-medium mb-4 break-words'>{organizationName}</h3>
 
             <div className='space-y-3'>
               {/* Email link */}
               <a
-                href='mailto:contact@poc-innovation.fr'
+                href={`mailto:${email}`}
                 className='flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors group min-w-0'
               >
                 <div className='flex-shrink-0 w-5 h-5 text-white/60 group-hover:text-white transition-colors mt-0.5'>
@@ -67,27 +81,23 @@ export default function AssociationContactModal({ isOpen, onClose }: Association
                 </div>
                 <div className='min-w-0 flex-1'>
                   <div className='text-xs text-white/60 mb-1'>Email</div>
-                  <div className='break-all'>contact@poc-innovation.fr</div>
+                  <div className='break-all'>{email}</div>
                 </div>
               </a>
 
               {/* LinkedIn link */}
               <a
-                href='https://linkedin.com/company/poc-innovation'
+                href={linkedinUrl}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors group min-w-0'
               >
                 <div className='flex-shrink-0 w-5 h-5 text-white/60 group-hover:text-white transition-colors mt-0.5'>
-                  <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <path d='M16 8A6 6 0 0 1 6 18V16A4 4 0 0 1 16 8Z' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                    <rect x='2' y='9' width='4' height='12' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                    <circle cx='4' cy='4' r='2' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                  </svg>
+                  <Linkedin className='w-5 h-5' />
                 </div>
                 <div className='min-w-0 flex-1'>
                   <div className='text-xs text-white/60 mb-1'>LinkedIn</div>
-                  <div className='break-all'>PoC Innovation</div>
+                  <div className='break-all'>{linkedinLabel}</div>
                 </div>
               </a>
             </div>

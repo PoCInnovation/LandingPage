@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Linkedin } from 'lucide-react'
 
 export type ContactPerson = {
   name: string
@@ -89,11 +90,7 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
                     className='flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors group min-w-0'
                   >
                     <div className='flex-shrink-0 w-5 h-5 text-white/60 group-hover:text-white transition-colors mt-0.5'>
-                      <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                        <path d='M16 8A6 6 0 0 1 6 18V16A4 4 0 0 1 16 8Z' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                        <rect x='2' y='9' width='4' height='12' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                        <circle cx='4' cy='4' r='2' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                      </svg>
+                      <Linkedin className='w-5 h-5' />
                     </div>
                     <div className='min-w-0 flex-1'>
                       <div className='text-xs text-white/60 mb-1'>LinkedIn</div>

@@ -1,10 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
+import AssociationContactModal from './AssociationContactModal'
 import PoCButton from './PocButton'
 
 function Services() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <div className='container-custom relative z-10 mt-20 md:mt-30 flex justify-center'>
       <motion.div
@@ -51,11 +54,24 @@ function Services() {
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
         >
-          <PoCButton bgColor='bg-black'>
+          <PoCButton
+            bgColor='bg-black'
+            onClick={() => setIsContactModalOpen(true)}
+          >
             <p className='text-foreground'>En savoir plus</p>
           </PoCButton>
         </motion.div>
       </motion.div>
+
+      <AssociationContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        title="Contacter PoC Services"
+        organizationName="PoC Services"
+        email="pierre.lissope@poc-services.fr"
+        linkedinUrl="https://www.linkedin.com/company/poc-services"
+        linkedinLabel="PoC Services"
+      />
     </div>
   )
 }
