@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import AIPoleComponent from './PoleComponents/AIPoleComponent'
 import CyberPoleComponent from './PoleComponents/CyberPoleComponent'
 import P2PPoleComponent from './PoleComponents/P2PPoleComponent'
@@ -165,7 +166,17 @@ export default function InnovationPoles() {
         </div>
 
         <div className='mt-40 mx-auto container'>
-          <active.component />
+          <AnimatePresence mode='wait'>
+            <motion.div
+              key={selected}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <active.component />
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
