@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 type AssociationContactModalProps = {
   isOpen: boolean
@@ -6,10 +9,6 @@ type AssociationContactModalProps = {
 }
 
 export default function AssociationContactModal({ isOpen, onClose }: AssociationContactModalProps) {
-  if (!isOpen) {
-    return null
-  }
-
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose()
@@ -17,11 +16,23 @@ export default function AssociationContactModal({ isOpen, onClose }: Association
   }
 
   return (
-    <div
-      className='fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4'
-      onClick={handleBackdropClick}
-    >
-      <div className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-lg min-w-[320px] max-h-[90vh] overflow-y-auto p-6 shadow-2xl'>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className='fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4'
+          onClick={handleBackdropClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
+        >
+          <motion.div
+            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-lg min-w-[320px] max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
         {/* Close button */}
         <button
           type='button'
@@ -93,7 +104,9 @@ export default function AssociationContactModal({ isOpen, onClose }: Association
             </button>
           </div>
         </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
