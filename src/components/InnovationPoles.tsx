@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import AIPoleComponent from './PoleComponents/AIPoleComponent'
 import CyberPoleComponent from './PoleComponents/CyberPoleComponent'
 import P2PPoleComponent from './PoleComponents/P2PPoleComponent'
@@ -147,7 +147,7 @@ export default function InnovationPoles() {
     <div className='w-full md:mt-20'>
       <div className='relative z-10'>
         <div className='px-4 container mx-auto max-w-8xl'>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-12 place-items-stretch'>
+          <div className='flex flex-wrap justify-center gap-8 xl:gap-12'>
             {POLES.map(pole => (
               <div key={pole.key} className='relative overflow-visible'>
                 <SelectablePoleCard

@@ -41,7 +41,7 @@ export default function AssociationContactModal({
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <motion.div
-            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-lg min-w-[320px] max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
+            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-2xl min-w-[320px] max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -62,16 +62,16 @@ export default function AssociationContactModal({
 
         {/* Modal content */}
         <div className='text-white'>
-          <h2 className='text-xl font-semibold mb-4 pr-8'>{title}</h2>
+          <h2 className='text-lg sm:text-xl font-semibold mb-4 pr-8'>{title}</h2>
 
           <div className='bg-white/5 rounded-lg p-4 border border-white/10'>
-            <h3 className='text-lg font-medium mb-4 break-words'>{organizationName}</h3>
+            <h3 className='text-base sm:text-lg font-medium mb-4 break-words'>{organizationName}</h3>
 
             <div className='space-y-3'>
               {/* Email link */}
               <a
                 href={`mailto:${email}`}
-                className='flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors group min-w-0'
+                className='flex items-start gap-3 text-xs sm:text-sm text-white/80 hover:text-white transition-colors group min-w-0'
               >
                 <div className='flex-shrink-0 w-5 h-5 text-white/60 group-hover:text-white transition-colors mt-0.5'>
                   <svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -90,7 +90,7 @@ export default function AssociationContactModal({
                 href={linkedinUrl}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-start gap-3 text-sm text-white/80 hover:text-white transition-colors group min-w-0'
+                className='flex items-start gap-3 text-xs sm:text-sm text-white/80 hover:text-white transition-colors group min-w-0'
               >
                 <div className='flex-shrink-0 w-5 h-5 text-white/60 group-hover:text-white transition-colors mt-0.5'>
                   <Linkedin className='w-5 h-5' />
@@ -108,7 +108,7 @@ export default function AssociationContactModal({
             <button
               type='button'
               onClick={onClose}
-              className='px-4 py-2 bg-transparent border border-white/30 text-white rounded-lg hover:bg-white/10 hover:border-white/50 transition-all text-sm'
+              className='px-4 py-2 bg-transparent border border-white/30 text-white rounded-lg hover:bg-white/10 hover:border-white/50 transition-all text-xs sm:text-sm'
             >
               Fermer
             </button>

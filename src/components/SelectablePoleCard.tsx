@@ -26,7 +26,7 @@ export default function SelectablePoleCard({
     <button
       type='button'
       onClick={onClick}
-      className={`cursor-pointer relative w-full text-left rounded-xl border backdrop-blur-2xl px-4 py-4 transition-all duration-300 bg-[#E2E2E21A]/40 hover:bg-[#E2E2E21A]/60 hover:scale-105 origin-center ${selected ? 'scale-105 shadow-2xl shadow-white/10 z-10' : 'scale-100'}`}
+      className={`cursor-pointer relative w-80 h-44 text-left rounded-xl border backdrop-blur-2xl px-4 py-4 transition-all duration-300 bg-[#E2E2E21A]/40 hover:bg-[#E2E2E21A]/60 hover:scale-105 origin-center ${selected ? 'scale-105 shadow-2xl shadow-white/10 z-10' : 'scale-100'}`}
       style={borderC}
     >
       {selected && (

@@ -13,10 +13,11 @@ function SocialProof() {
     '/partner/ramify.png',
     '/partner/scaleway.png',
     '/partner/cryptio.svg',
+    '/partner/darwin.png',
   ]
 
   return (
-    <div data-section='social-proof' className='container-custom relative z-10 mt-20 md:mt-35 lg:mt-50 flex flex-col items-center justify-center text-center px-4'>
+    <div data-section='social-proof' className='container-custom relative z-10 mt-20 md:mt-35 lg:mt-50 mb-16 sm:mb-0 flex flex-col items-center justify-center text-center px-4'>
       <p className='text-md md:text-xl text-foreground max-w-4xl mb-7'>
         <b>Ils nous accompagnent dans nos projets les plus ambitieux</b>
       </p>

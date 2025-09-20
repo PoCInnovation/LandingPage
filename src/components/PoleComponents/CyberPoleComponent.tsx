@@ -86,13 +86,13 @@ export default function CyberPoleComponent() {
           onContactClick={handleContactClick}
         />
         <StatsCard
-          number='20+'
+          number='25+'
           title='Projets complétés'
           description='Du reverse engineering de malwares à la création de RAT nos projets couvrent la partie offensive et défensive de la cybersécurité.'
         />
         <StatsCard
-          number='15+'
-          title='Workshops de découverte'
+          number='45+'
+          title='Workshops de découverte animés'
           description='Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie et bien plus.'
         />
         <EventImageCard
@@ -116,7 +116,7 @@ export default function CyberPoleComponent() {
       </div>
 
       {/* Medium screens (md to xl): 2 columns layout using full width */}
-      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 auto-rows-auto'>
+      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 grid-rows-2'>
         {/* Profile Card spans 2 rows */}
         <div className='row-span-2'>
           <ProfileCard
@@ -128,19 +128,17 @@ export default function CyberPoleComponent() {
           />
         </div>
 
-        {/* Right column with other cards */}
-        <div className='flex flex-col gap-4'>
-          <StatsCard
-            number='20+'
-            title='Projets complétés'
-            description='Du reverse engineering de malwares à la création de RAT nos projets couvrent la partie offensive et défensive de la cybersécurité.'
-          />
-          <StatsCard
-            number='15+'
-            title='Workshops de découverte'
-            description='Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie et bien plus.'
-          />
-        </div>
+        {/* Right column cards */}
+        <StatsCard
+          number='25+'
+          title='Projets complétés'
+          description='Du reverse engineering de malwares à la création de RAT nos projets couvrent la partie offensive et défensive de la cybersécurité.'
+        />
+        <StatsCard
+          number='45+'
+          title='Workshops de découverte animés'
+          description='Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie et bien plus.'
+        />
 
         {/* Event Cards in bottom row */}
         <EventImageCard
@@ -183,13 +181,13 @@ export default function CyberPoleComponent() {
         {/* Stats Cards - Column 2 */}
         <div className='col-span-1 grid grid-rows-2 gap-4 2xl:gap-6'>
           <StatsCard
-            number='20+'
+            number='25+'
             title='Projets complétés'
             description='Du reverse engineering de malwares à la création de RAT nos projets couvrent la partie offensive et défensive de la cybersécurité.'
           />
           <StatsCard
-            number='15+'
-            title='Workshops de découverte'
+            number='45+'
+            title='Workshops de découverte animés'
             description='Nos workshops couvrent les fondamentaux de la cybersécurité : forensic, ransomware, reverse engineering, cryptographie et bien plus.'
           />
         </div>

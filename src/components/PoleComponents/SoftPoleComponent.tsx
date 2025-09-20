@@ -92,13 +92,13 @@ export default function SoftwarePoleComponent() {
           onContactClick={handleContactClick}
         />
         <StatsCard
-          number='20+'
+          number='30+'
           title='Projets complétés'
           description="Du SDK serverless à la génération d'API ou la migration front, nos projets explorent les outils et frameworks les plus actuels."
         />
         <StatsCard
-          number='30+'
-          title='Workshops de découverte'
+          number='100+'
+          title='Workshops de découverte animés'
           description='Découverte des frameworks les plus utilisés, les différents langages, les bases de données, tests, déploiement et bien plus encore.'
         />
         <EventImageCard
@@ -122,7 +122,7 @@ export default function SoftwarePoleComponent() {
       </div>
 
       {/* Medium screens (md to xl): 2 columns layout using full width */}
-      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 auto-rows-auto'>
+      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 grid-rows-2'>
         {/* Profile Card spans 2 rows */}
         <div className='row-span-2'>
           <ProfileCard
@@ -134,19 +134,17 @@ export default function SoftwarePoleComponent() {
           />
         </div>
 
-        {/* Right column with other cards */}
-        <div className='flex flex-col gap-4'>
-          <StatsCard
-            number='20+'
-            title='Projets complétés'
-            description="Du SDK serverless à la génération d'API ou la migration front, nos projets explorent les outils et frameworks les plus actuels."
-          />
-          <StatsCard
-            number='30+'
-            title='Workshops de découverte'
-            description='Découverte des frameworks les plus utilisés, les différents langages, les bases de données, tests, déploiement et bien plus encore.'
-          />
-        </div>
+        {/* Right column cards */}
+        <StatsCard
+          number='30+'
+          title='Projets complétés'
+          description="Du SDK serverless à la génération d'API ou la migration front, nos projets explorent les outils et frameworks les plus actuels."
+        />
+        <StatsCard
+          number='100+'
+          title='Workshops de découverte animés'
+          description='Découverte des frameworks les plus utilisés, les différents langages, les bases de données, tests, déploiement et bien plus encore.'
+        />
 
         {/* Event Cards in bottom row */}
         <EventImageCard
@@ -189,13 +187,13 @@ export default function SoftwarePoleComponent() {
         {/* Stats Cards - Column 2 */}
         <div className='col-span-1 grid grid-rows-2 gap-4 2xl:gap-6'>
           <StatsCard
-            number='20+'
+            number='30+'
             title='Projets complétés'
             description="Du SDK serverless à la génération d'API ou la migration front, nos projets explorent les outils et frameworks les plus actuels."
           />
           <StatsCard
-            number='30+'
-            title='Workshops de découverte'
+            number='100+'
+            title='Workshops de découverte animés'
             description='Découverte des frameworks les plus utilisés, les différents langages, les bases de données, tests, déploiement et bien plus encore.'
           />
         </div>

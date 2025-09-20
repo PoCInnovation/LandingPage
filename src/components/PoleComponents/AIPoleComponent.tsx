@@ -55,7 +55,7 @@ export default function AIPoleComponent() {
         'Open-Zero est un projet de recherche open source visant à reproduire les méthodes AlphaZero et MuZero de DeepMind pour l’entraînement d’une IA au jeu d’échecs, en s’appuyant sur l’apprentissage par renforcement profond (notamment l’algorithme A3C).',
       tools: ['PyTorch', 'Python', 'AC3'],
       contributors: ['Gino Ambigaipalan', 'Jean-Baptiste Debize', 'Nell Fauveau', 'Bogdan Guillemoles'],
-      heroImage: { src: '/ai/deep-poc.png', alt: 'Open-Zero hero' },
+      heroImage: { src: '/ai/open-zero.png', alt: 'Open-Zero hero' },
       repoUrl: 'https://github.com/PoCInnovation/Open-Zero',
     },
     {
@@ -75,7 +75,7 @@ export default function AIPoleComponent() {
         'Deep-PoC est un outil de détection de deepfakes capable d’identifier les contenus manipulés (images ou vidéos) grâce à l’intelligence artificielle. Il permet d’analyser et de signaler les falsifications visuelles afin de lutter contre la désinformation et les usages malveillants.',
       tools: ['Python', 'PyTorch', 'Django', 'Matplotlib'],
       contributors: ['Mikael Vallenet', 'Valentin De Matos', 'Victor Guyot'],
-      heroImage: { src: '/ai/Deep-Poc.png', alt: 'Deep-PoC hero' },
+      heroImage: { src: '/ai/deep-poc.png', alt: 'Deep-PoC hero' },
       repoUrl: 'https://github.com/PoCInnovation/Deep-PoC',
     },
   ]
@@ -97,8 +97,8 @@ export default function AIPoleComponent() {
           description="Des modèles d'IA multimodal à la détection de deepfakes. Ces projets mêlent recherche appliquée et innovation technique."
         />
         <StatsCard
-          number='15+'
-          title='Workshops de découverte'
+          number='50+'
+          title='Workshops de découverte animés'
           description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
         />
         <EventImageCard
@@ -122,7 +122,7 @@ export default function AIPoleComponent() {
       </div>
 
       {/* Medium screens (md to xl): 2 columns layout using full width */}
-      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 auto-rows-auto'>
+      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 grid-rows-2'>
         {/* Profile Card spans 2 rows */}
         <div className='row-span-2'>
           <ProfileCard
@@ -134,19 +134,17 @@ export default function AIPoleComponent() {
           />
         </div>
 
-        {/* Right column with other cards */}
-        <div className='flex flex-col gap-4'>
-          <StatsCard
-            number='20+'
-            title='Projets complétés'
-            description="Des modèles d'IA multimodal à la détection de deepfakes. Ces projets mêlent recherche appliquée et innovation technique."
-          />
-          <StatsCard
-            number='15+'
-            title='Workshops de découverte'
-            description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
-          />
-        </div>
+        {/* Right column cards */}
+        <StatsCard
+          number='20+'
+          title='Projets complétés'
+          description="Des modèles d'IA multimodal à la détection de deepfakes. Ces projets mêlent recherche appliquée et innovation technique."
+        />
+        <StatsCard
+          number='50+'
+          title='Workshops de découverte animés'
+          description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
+        />
 
         {/* Event Cards in bottom row */}
         <EventImageCard
@@ -194,8 +192,8 @@ export default function AIPoleComponent() {
             description="Des modèles d'IA multimodal à la détection de deepfakes. Ces projets mêlent recherche appliquée et innovation technique."
           />
           <StatsCard
-            number='15+'
-            title='Workshops de découverte'
+            number='50+'
+            title='Workshops de découverte animés'
             description="Des workshops couvrant toutes les notions fondamentales : IA générative, traitement d'image, NLP, apprentissage supervisé et non-supervisé..."
           />
         </div>

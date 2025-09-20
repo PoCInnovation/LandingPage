@@ -21,7 +21,7 @@ function Association() {
       <div className='mt-6 w-full max-w-7xl'>
         <div className='flex flex-col lg:flex-row lg:space-x-8 space-y-6 lg:space-y-0 items-center lg:items-start'>
           <motion.div
-            className='w-full lg:w-1/2 xl:w-[45%]'
+            className='w-full lg:w-2/5 xl:w-[45%]'
             initial={{ x: -30 }}
             whileInView={{ x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
@@ -46,7 +46,7 @@ function Association() {
           </motion.div>
 
           <motion.div
-            className='w-full lg:w-1/2 xl:w-[55%]'
+            className='w-full lg:w-3/5 xl:w-[55%]'
             initial={{ x: 30 }}
             whileInView={{ x: 0 }}
             viewport={{ once: true, margin: '-60px' }}

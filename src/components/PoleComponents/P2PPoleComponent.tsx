@@ -91,13 +91,13 @@ export default function P2PPoleComponent() {
           onContactClick={handleContactClick}
         />
         <StatsCard
-          number='20+'
+          number='25+'
           title='Projets complétés'
           description='Nos membres développent des dApps open-source : protocoles DeFi, crowdfunding, outils DAO ou stockage décentralisé.'
         />
         <StatsCard
-          number='10+'
-          title='Workshops de découverte'
+          number='75+'
+          title='Workshops de découverte animés'
           description='Des workshops couvrant toutes les bases : Ethereum, smart contracts en Solidity, gestion de tokens, DAOs, sécurité et interactions on-chain.'
         />
         <EventImageCard
@@ -121,7 +121,7 @@ export default function P2PPoleComponent() {
       </div>
 
       {/* Medium screens (md to xl): 2 columns layout using full width */}
-      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 auto-rows-auto'>
+      <div className='hidden md:grid md:grid-cols-2 xl:hidden gap-4 px-4 grid-rows-2'>
         {/* Profile Card spans 2 rows */}
         <div className='row-span-2'>
           <ProfileCard
@@ -133,19 +133,17 @@ export default function P2PPoleComponent() {
           />
         </div>
 
-        {/* Right column with other cards */}
-        <div className='flex flex-col gap-4'>
-          <StatsCard
-            number='20+'
-            title='Projets complétés'
-            description='Nos membres développent des dApps open-source : protocoles DeFi, crowdfunding, outils DAO ou stockage décentralisé.'
-          />
-          <StatsCard
-            number='10+'
-            title='Workshops de découverte'
-            description='Des workshops couvrant toutes les bases : Ethereum, smart contracts en Solidity, gestion de tokens, DAOs, sécurité et interactions on-chain.'
-          />
-        </div>
+        {/* Right column cards */}
+        <StatsCard
+          number='25+'
+          title='Projets complétés'
+          description='Nos membres développent des dApps open-source : protocoles DeFi, crowdfunding, outils DAO ou stockage décentralisé.'
+        />
+        <StatsCard
+          number='75+'
+          title='Workshops de découverte animés'
+          description='Des workshops couvrant toutes les bases : Ethereum, smart contracts en Solidity, gestion de tokens, DAOs, sécurité et interactions on-chain.'
+        />
 
         {/* Event Cards in bottom row */}
         <EventImageCard
@@ -188,13 +186,13 @@ export default function P2PPoleComponent() {
         {/* Stats Cards - Column 2 */}
         <div className='col-span-1 grid grid-rows-2 gap-4 2xl:gap-6'>
           <StatsCard
-            number='20+'
+            number='25+'
             title='Projets complétés'
             description='Nos membres développent des dApps open-source : protocoles DeFi, crowdfunding, outils DAO ou stockage décentralisé.'
           />
           <StatsCard
-            number='10+'
-            title='Workshops de découverte'
+            number='75+'
+            title='Workshops de découverte animés'
             description='Des workshops couvrant toutes les bases : Ethereum, smart contracts en Solidity, gestion de tokens, DAOs, sécurité et interactions on-chain.'
           />
         </div>
