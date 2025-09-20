@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       'Découvrez notre association étudiante dédiée à l’innovation et à la transformation des idées en projets concrets.',
     images: ['/logo_poc.png'],
     url: 'https://www.poc-innovation.fr/',
-    siteName: 'POC Landing',
+    siteName: 'PoC Innovation',
     locale: 'fr_FR',
     type: 'website',
   },
