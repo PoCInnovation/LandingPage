@@ -42,7 +42,7 @@ export default function AIPoleComponent() {
       contributors: [
         'Léandre Ramos',
         'Sacha Henneveux',
-        'Antoine Béa',
+        'Antoine Béal',
         'Manmohit-Singh Lal',
       ],
       heroImage: { src: '/ai/cyrebro.png', alt: 'Cyrebro hero' },
