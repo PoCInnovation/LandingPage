@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Poppins } from 'next/font/google'
 import React from 'react'
 import GlassyNavbar from '@/components/Navbar'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
 
 const poppins = Poppins({
@@ -54,6 +55,7 @@ export default function RootLayout({
         <GlassyNavbar />
         {children}
         <Analytics />
+        <SpeedInsights/>
       </body>
     </html>
   )
