@@ -66,14 +66,14 @@ function Association() {
                   delay: 0.8,
                 },
                 {
-                  statText: '100+',
+                  statText: '125+',
                   title: 'Projets complétés',
                   description:
                     'PoC entreprend de nombreux projets indépendant ou en collaboration avec une entreprise.',
                   delay: 1.0,
                 },
                 {
-                  statText: '150+',
+                  statText: '300+',
                   title: 'Évenements',
                   description:
                     'A destination d’étudiants et de professionnels dans toute la France.',
