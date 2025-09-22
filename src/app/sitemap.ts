@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'https://poc-innovation.fr/logo_poc.png',
         'https://poc-innovation.fr/poc_home.jpg',
         'https://poc-innovation.fr/poc_home_2.jpg',
+        'https://poc-innovation.fr/logo_black.svg',
+        'https://poc-innovation.fr/logo_white.svg',
       ],
     },
     {
@@ -18,6 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
+      images: [
+        'https://poc-innovation.fr/logo_poc.png',
+        'https://poc-innovation.fr/poc_home.jpg',
+        'https://poc-innovation.fr/poc_home_2.jpg',
+        'https://poc-innovation.fr/logo_black.svg',
+        'https://poc-innovation.fr/logo_white.svg',
+      ],
     },
   ]
 }
