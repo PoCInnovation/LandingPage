@@ -16,7 +16,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.poc-innovation.fr'),
   icons: {
-    icon: '/logo_black.svg',
+    icon: '/logo_poc.png',
   },
   title: 'PoC - Centre d\'innovation étudiant',
   description:
