@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import PoCButton from '../PocButton'
@@ -122,15 +123,14 @@ export default function FeaturedProjects({ title = 'Les projets phares de notre 
 
               {active.repoUrl && (
                 <div className='mt-4'>
-                  <PoCButton
-                    onClick={() => {
-                      window.location.href = active.repoUrl ?? 'https://github.com/PoCInnovation'
-                    }}
-                    bgColor='bg-[#050610]'
-                    textColor='text-white'
-                  >
-                    Github
-                  </PoCButton>
+                  <Link href={active.repoUrl ?? 'https://github.com/PoCInnovation'} target='_blank'>
+                    <PoCButton
+                      bgColor='bg-[#050610]'
+                      textColor='text-white'
+                    >
+                      Github
+                    </PoCButton>
+                  </Link>
                 </div>
               )}
             </motion.div>
