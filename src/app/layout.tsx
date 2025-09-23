@@ -4,6 +4,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Poppins } from 'next/font/google'
 import React from 'react'
 import GlassyNavbar from '@/components/Navbar'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import { FixedThemeToggle } from '@/components/FixedThemeToggle'
 import './globals.css'
 
 const poppins = Poppins({
@@ -52,10 +54,13 @@ export default function RootLayout({
   return (
     <html lang='fr' className={poppins.variable}>
       <body className='font-sans antialiased'>
-        <GlassyNavbar />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider>
+          <GlassyNavbar />
+          <FixedThemeToggle />
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   )

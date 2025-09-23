@@ -36,7 +36,7 @@ export default function InnovationPage() {
               className='absolute inset-0'
               style={{
                 background:
-                  'linear-gradient(180deg, #050610 0%, rgba(5, 6, 16, 0.00) 27.4%, rgba(5, 6, 16, 0.00) 61.54%, #050610 100%)',
+                  'linear-gradient(180deg, var(--color-background-main) 0%, transparent 27.4%, transparent 61.54%, var(--color-background-main) 100%)',
               }}
             >
             </div>

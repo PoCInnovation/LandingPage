@@ -7,7 +7,7 @@ function Footer() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   return (
-    <footer className='relative w-full py-6 sm:py-8 lg:py-12 mt-12 sm:mt-16 lg:mt-20'>
+    <footer className='relative w-full py-6 sm:py-8 lg:py-12 mt-12 sm:mt-16 lg:mt-20 z-10'>
       <div className='relative w-full h-[2px] mb-6 sm:mb-8'>
         <div className='z-10 absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-full bg-gradient-to-r from-transparent via-foreground/35 to-transparent rounded-full' />
       </div>

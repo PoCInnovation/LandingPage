@@ -3,12 +3,14 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
+import { useTheme } from 'next-themes'
 import AssociationContactModal from './AssociationContactModal'
 import GlassyButton from './GlassyButton'
 import PoCButton from './PocButton'
 
 export function Hero() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const { theme } = useTheme()
 
   return (
     <>
@@ -21,34 +23,46 @@ export function Hero() {
             className='h-[120px] md:h-[160px] flex items-center justify-center mb-2'
           >
             <div className='relative inline-block'>
-              {/* Gradient overlay, masked by logo shape */}
-              <div
-                className='absolute inset-0 z-20'
-                style={{
-                  WebkitMaskImage: 'url(/logo_poc.png)',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center',
-                  WebkitMaskSize: 'contain',
-                  maskImage: 'url(/logo_poc.png)',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  maskSize: 'contain',
-                  background: `
-        radial-gradient(circle at bottom left, rgba(96,165,250,0.5) 0%, transparent 30%),
-        radial-gradient(circle at top right, rgba(244,114,182,0.6) 0%, transparent 40%)
-      `,
-                }}
-              />
-
-              {/* Original white logo on top */}
-              <Image
-                src='/logo_poc.png'
-                alt='Logo'
-                width={440}
-                height={160}
-                className='relative z-10 w-[330px] md:w-[560px] h-auto'
-                priority
-              />
+              {theme === 'light' ? (
+                /* Logo noir pour thème clair */
+                <Image
+                  src='/logo_black.svg'
+                  alt='Logo PoC'
+                  width={440}
+                  height={160}
+                  className='relative z-10 w-[330px] md:w-[560px] h-auto'
+                  priority
+                />
+              ) : (
+                /* Logo blanc avec dégradés pour thème sombre */
+                <>
+                  <div
+                    className='absolute inset-0 z-20'
+                    style={{
+                      WebkitMaskImage: 'url(/logo_poc.png)',
+                      WebkitMaskRepeat: 'no-repeat',
+                      WebkitMaskPosition: 'center',
+                      WebkitMaskSize: 'contain',
+                      maskImage: 'url(/logo_poc.png)',
+                      maskRepeat: 'no-repeat',
+                      maskPosition: 'center',
+                      maskSize: 'contain',
+                      background: `
+                        radial-gradient(circle at bottom left, rgba(96,165,250,0.5) 0%, transparent 30%),
+                        radial-gradient(circle at top right, rgba(244,114,182,0.6) 0%, transparent 40%)
+                      `,
+                    }}
+                  />
+                  <Image
+                    src='/logo_poc.png'
+                    alt='Logo PoC'
+                    width={440}
+                    height={160}
+                    className='relative z-10 w-[330px] md:w-[560px] h-auto'
+                    priority
+                  />
+                </>
+              )}
             </div>
           </motion.div>
 

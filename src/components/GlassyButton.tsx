@@ -15,18 +15,21 @@ export default function GlassyButton({
     <motion.button
       onClick={onClick}
       className={`
-        relative px-6 py-4 text-white font-medium text-md
-        bg-[#E2E2E21A]/90 bg-opacity-40 
-        rounded-3xl 
-        backdrop-blur-2xl 
-        transition-all duration-300 ease-in-out 
-        hover:bg-opacity-50 hover:border-opacity-20
-        hover:shadow-2xl hover:shadow-black/20
-        shadow-xl shadow-black/10
+        relative px-6 py-4 font-medium text-md
+        rounded-3xl
+        backdrop-blur-2xl
+        transition-all duration-300 ease-in-out
+        hover:shadow-2xl
+        shadow-xl
         tracking-wide
         cursor-pointer
         ${className}
       `}
+      style={{
+        backgroundColor: 'var(--color-background-secondary)',
+        color: 'var(--color-foreground)',
+        border: '1px solid var(--color-border-default)',
+      }}
       whileHover={{
         y: -2,
         scale: 1.02,
@@ -39,7 +42,8 @@ export default function GlassyButton({
       }}
     >
       <div
-        className='absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-white/5 pointer-events-none hover:opacity-100 opacity-0 transition-opacity duration-300'
+        className='absolute inset-0 rounded-3xl opacity-0 hover:opacity-10 transition-opacity duration-300 pointer-events-none'
+        style={{ backgroundColor: 'var(--color-foreground)' }}
       />
 
       <span className='relative z-10'>{children}</span>

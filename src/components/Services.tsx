@@ -55,10 +55,9 @@ function Services() {
           transition={{ duration: 1.2, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
         >
           <PoCButton
-            bgColor='bg-black'
             onClick={() => setIsContactModalOpen(true)}
           >
-            <p className='text-foreground'>En savoir plus</p>
+            Découvrir PoC Services
           </PoCButton>
         </motion.div>
       </motion.div>
