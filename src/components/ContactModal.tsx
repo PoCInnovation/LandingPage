@@ -1,4 +1,7 @@
 'use client'
+/* eslint-disable perfectionist/sort-imports */
+/* eslint-disable perfectionist/sort-named-imports */
+/* eslint-disable style/indent */
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -60,8 +63,8 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
           <h2 className='text-lg sm:text-xl font-semibold mb-4 pr-8'>{title}</h2>
 
           <div className='space-y-4'>
-            {contacts.map((contact, index) => (
-              <div key={index} className='bg-white/5 rounded-lg p-4 border border-white/10'>
+            {contacts.map(contact => (
+              <div key={`${contact.email}-${contact.name}`} className='bg-white/5 rounded-lg p-4 border border-white/10'>
                 <h3 className='text-base sm:text-lg font-medium mb-4 break-words'>{contact.name}</h3>
 
                 <div className='space-y-3'>

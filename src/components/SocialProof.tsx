@@ -26,7 +26,7 @@ function SocialProof() {
         <div className='flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-12 lg:gap-16'>
           {logos.map((logo, index) => (
             <motion.div
-              key={index}
+              key={`logo-${logo}`}
               className='w-24 h-12 sm:w-28 sm:h-16 md:w-32 md:h-18 lg:w-36 lg:h-24 flex items-center justify-center'
               initial={{ y: 20 }}
               whileInView={{ y: 0 }}

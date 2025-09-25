@@ -1,4 +1,8 @@
 'use client'
+/* eslint-disable perfectionist/sort-imports */
+/* eslint-disable perfectionist/sort-named-imports */
+/* eslint-disable style/indent */
+/* eslint-disable style/comma-dangle */
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'

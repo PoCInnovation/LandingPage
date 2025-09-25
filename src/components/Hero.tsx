@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 import AssociationContactModal from './AssociationContactModal'
-import GlassyButton from './GlassyButton'
 import PoCButton from './PocButton'
 
 export function Hero() {

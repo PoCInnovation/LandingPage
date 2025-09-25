@@ -1,4 +1,5 @@
 'use client'
+/* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
 
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'

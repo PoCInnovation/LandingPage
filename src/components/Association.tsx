@@ -86,9 +86,9 @@ function Association() {
                     'De start-ups aux géants de la tech comme Google ou Microsoft, nos anciens propagent l’ADN PoC aux quatre coins du globe.',
                   delay: 0.9,
                 },
-              ].map((card, index) => (
+              ].map(card => (
                 <motion.div
-                  key={index}
+                  key={`${card.title}-${card.statText}`}
                   initial={{ y: 15 }}
                   whileInView={{ y: 0 }}
                   viewport={{ once: true }}
