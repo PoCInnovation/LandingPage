@@ -66,11 +66,11 @@ function Services() {
       <AssociationContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
-        title="Contacter PoC Services"
-        organizationName="PoC Services"
-        email="pierre.lissope@poc-services.fr"
-        linkedinUrl="https://www.linkedin.com/company/poc-services"
-        linkedinLabel="PoC Services"
+        title='Contacter PoC Services'
+        organizationName='PoC Services'
+        email='pierre.lissope@poc-services.fr'
+        linkedinUrl='https://www.linkedin.com/company/poc-services'
+        linkedinLabel='PoC Services'
       />
     </div>
   )

@@ -106,13 +106,6 @@ export function Hero() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <GlassyButton
-              onClick={() => {
-                window.location.href = '/innovation'
-              }}
-            >
-              En savoir plus
-            </GlassyButton>
             <PoCButton
               onClick={() => setIsContactModalOpen(true)}
             >
