@@ -32,7 +32,7 @@ function GlassyNavbar() {
   return (
     <>
       <div
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex bg-[#E2E2E21A]/80 border-foreground/10 rounded-4xl backdrop-blur-3xl shadow-lg shadow-white/10 px-2 sm:pl-4 sm:pr-2 md:pr-2 items-center gap-1 sm:gap-3 md:gap-6 transition-transform duration-300 h-14 sm:h-16 w-fit min-w-[280px] sm:min-w-[355px] md:min-w-[460px] ${isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+2rem)]'}`}
+        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex bg-[#E2E2E21A]/80 border-foreground/10 rounded-4xl backdrop-blur-3xl shadow-lg shadow-white/10 px-2 sm:pl-4 sm:pr-2 md:pr-2 items-center gap-1 sm:gap-3 md:gap-6 transition-transform duration-300 h-14 sm:h-16 w-fit min-w-[288px] pr-1 sm:min-w-[355px] md:min-w-[460px] ${isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+2rem)]'}`}
       >
         <Link href='/' className='cursor-pointer group'>
           <Image
@@ -55,12 +55,12 @@ function GlassyNavbar() {
           <Link href='/innovation' className='cursor-pointer group'>
             <button className='cursor-pointer' type='button'>
               <span className='text-muted-foreground group-hover:text-white group-active:text-white transition-colors duration-200 text-xs sm:text-sm md:text-lg font-medium'>
-                Innovation
+                Pôles
               </span>
             </button>
           </Link>
           <PoCButton
-            className='cursor-pointer !px-2 sm:!px-4 md:!px-6 !py-1.5 sm:!py-3 md:!py-4'
+            className='cursor-pointer !px-3 sm:!px-4 md:!px-6 !py-1.5 sm:!py-3 md:!py-4 !h-10 sm:!h-auto flex items-center justify-center sm:block'
             onClick={() => setIsContactModalOpen(true)}
           >
             <span className='text-black text-xs sm:text-sm md:text-base font-medium mx-1 sm:mx-0'>Contact</span>

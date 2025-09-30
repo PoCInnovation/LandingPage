@@ -1,37 +1,17 @@
-import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React, { useState } from 'react'
-import ContactModal from '../ContactModal'
+import React from 'react'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
 import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
-export default function AIPoleComponent() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+type AIPoleComponentProps = {
+  onOpenContactModal: () => void
+  isPriority?: boolean
+}
 
-  const contacts: ContactPerson[] = [
-    {
-      name: 'Manmohit-Singh Lal',
-      email: 'manmohit.singh-lal@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/manmohit-singh-l-300b50356/',
-    },
-    {
-      name: 'Sacha Henneveux',
-      email: 'sacha.henneveux@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/sacha-henneveux-084052304',
-    },
-  ]
-
-  const handleContactClick = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
-
+export default function AIPoleComponent({ onOpenContactModal, isPriority = false }: AIPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'cyrebro',
@@ -89,7 +69,8 @@ export default function AIPoleComponent() {
           role='Responsables IA'
           imageSrc='/ai/ia_respo.png'
           imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
-          onContactClick={handleContactClick}
+          onContactClick={onOpenContactModal}
+          priority={isPriority}
         />
         <StatsCard
           number='20+'
@@ -106,18 +87,21 @@ export default function AIPoleComponent() {
           imageAlt='Hackathon Google'
           title='Hackathon Google'
           date='5 Juillet 2025'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/ai/siami.jpeg'
           imageAlt="Salon IA ministère de l'intérieur"
           title="Salon IA ministère de l'intérieur"
           date='8 Octobre 2024'
+          priority={isPriority}
         />
         <LargeEventCard
           imageSrc='/ai/mistral-hackathon.jpeg'
           imageAlt='Hackathon Mistral'
           title='Hackathon Mistral'
           date='19 Avril 2025'
+          priority={isPriority}
         />
       </div>
 
@@ -130,7 +114,8 @@ export default function AIPoleComponent() {
             role='Responsables IA'
             imageSrc='/ai/ia_respo.png'
             imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
+            priority
           />
         </div>
 
@@ -152,12 +137,14 @@ export default function AIPoleComponent() {
           imageAlt="Salon IA ministère de l'intérieur"
           title="Salon IA ministère de l'intérieur"
           date='8 Octobre 2024'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/ai/hackathon-google.jpeg'
           imageAlt='Hackathon Google'
           title='Hackathon Google'
           date='5 Juillet 2025'
+          priority={isPriority}
         />
 
         {/* Large Event Card spans full width */}
@@ -167,6 +154,7 @@ export default function AIPoleComponent() {
             imageAlt='Hackathon Mistral'
             title='Hackathon Mistral'
             date='19 Avril 2025'
+            priority
           />
         </div>
       </div>
@@ -180,7 +168,8 @@ export default function AIPoleComponent() {
             role='Responsables IA'
             imageSrc='/ai/ia_respo.png'
             imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
+            priority
           />
         </div>
 
@@ -205,12 +194,14 @@ export default function AIPoleComponent() {
             imageAlt='Hackathon Google'
             title='Hackathon Google'
             date='5 Juillet 2025'
+            priority
           />
           <EventImageCard
             imageSrc='/ai/siami.jpeg'
             imageAlt="Salon IA ministère de l'intérieur"
             title="Salon IA ministère de l'intérieur"
             date='8 Octobre 2024'
+            priority
           />
         </div>
 
@@ -221,6 +212,7 @@ export default function AIPoleComponent() {
             imageAlt='Hackathon Mistral'
             title='Hackathon Mistral'
             date='19 Avril 2025'
+            priority
           />
         </div>
       </div>
@@ -228,14 +220,6 @@ export default function AIPoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        title="Contacter l'équipe IA"
-        contacts={contacts}
-      />
     </div>
   )
 }

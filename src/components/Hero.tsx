@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 import AssociationContactModal from './AssociationContactModal'
-import GlassyButton from './GlassyButton'
 import PoCButton from './PocButton'
 
 export function Hero() {
@@ -106,13 +105,6 @@ export function Hero() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            <GlassyButton
-              onClick={() => {
-                window.location.href = '/innovation'
-              }}
-            >
-              En savoir plus
-            </GlassyButton>
             <PoCButton
               onClick={() => setIsContactModalOpen(true)}
             >

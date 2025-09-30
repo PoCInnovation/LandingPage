@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 type ProfileCardProps = {
@@ -6,17 +7,22 @@ type ProfileCardProps = {
   imageSrc: string
   imageAlt: string
   onContactClick?: () => void
+  priority?: boolean
 }
 
-export default function ProfileCard({ name, role, imageSrc, imageAlt, onContactClick }: ProfileCardProps) {
+export default function ProfileCard({ name, role, imageSrc, imageAlt, onContactClick, priority = false }: ProfileCardProps) {
   return (
     <div className='relative bg-[#E2E2E21A]/70 backdrop-blur-2xl rounded-xl border border-foreground/10 overflow-hidden w-full h-full min-h-[300px] aspect-[3/4]'>
       {/* Background Image */}
       <div className='absolute inset-0'>
-        <img
+        <Image
           src={imageSrc}
           alt={imageAlt}
-          className='w-full h-full object-cover'
+          fill
+          className='object-cover'
+          sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw'
+          priority={priority}
+          loading={priority ? undefined : 'eager'}
         />
         {/* Gradient noir de bas en haut pour plus de contraste */}
         <div className='absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent' />

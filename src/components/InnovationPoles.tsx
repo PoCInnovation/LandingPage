@@ -1,7 +1,10 @@
 'use client'
+/* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
 
+import type { ContactPerson } from './ContactModal'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import ContactModal from './ContactModal'
 import AIPoleComponent from './PoleComponents/AIPoleComponent'
 import CyberPoleComponent from './PoleComponents/CyberPoleComponent'
 import P2PPoleComponent from './PoleComponents/P2PPoleComponent'
@@ -19,6 +22,19 @@ const POLES = [
     description:
       'Nous explorons le machine learning, l\'IA générative et plein d\'autres architectures pour créer des outils utiles et innovants.',
     component: AIPoleComponent,
+    contacts: [
+      {
+        name: 'Manmohit-Singh Lal',
+        email: 'manmohit.singh-lal@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/manmohit-singh-l-300b50356/',
+      },
+      {
+        name: 'Sacha Henneveux',
+        email: 'sacha.henneveux@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/sacha-henneveux-084052304',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe IA',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#AA222B] to-[#5E1265] h-14 w-14 rounded-sm'>
         <svg
@@ -48,6 +64,19 @@ const POLES = [
     description:
       'Développement web, mobile et desktop : nous construisons des solutions techniques utiles, performantes et open-source.',
     component: SoftwarePoleComponent,
+    contacts: [
+      {
+        name: 'Laurent Gonzalez',
+        email: 'laurent.gonzalez@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/laurent-gonzalez-epitech/',
+      },
+      {
+        name: 'Milo Kowalska',
+        email: 'milo.kowalska@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/milo-kowalska-6a22472a3/',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe Software',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#224DAA] to-[#3B1265]  h-14 w-14 rounded-sm'>
         <svg
@@ -77,6 +106,19 @@ const POLES = [
     description:
       'Conception d\'apps, smart contracts et protocoles décentralisés sur Ethereum, Layer 2, Solana et plus.',
     component: P2PPoleComponent,
+    contacts: [
+      {
+        name: 'Aurelien Demeusy',
+        email: 'aurelien.demeusy@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/aurelien-demeusy/',
+      },
+      {
+        name: 'Jules Lordet',
+        email: 'jules.lordet@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/jules-lordet-9798a12b3/',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe Blockchain',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#7C9221] to-[#12653B] h-14 w-14 rounded-sm'>
         <svg
@@ -106,20 +148,23 @@ const POLES = [
     description:
       'Analyse, pentesting, audit et création d\'outils défensifs pour renforcer la sécurité des systèmes numériques.',
     component: CyberPoleComponent,
+    contacts: [
+      {
+        name: 'Timothée Pasteau-Berthaud',
+        email: 'timothee.pasteau-berthaud@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/company/poc-innovation',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe Cybersécurité',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#2D909D] to-[#0F439D] h-14 w-14 rounded-sm'>
-        <svg
-          width='38'
-          height='31'
-          viewBox='0 0 38 31'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
+        <svg className='block w-3/4 h-3/4' viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
-            d='M18.8086 0.25415C20.7286 0.254186 22.4886 1.06131 23.6055 2.40063C23.9719 2.32538 24.3378 2.27472 24.6074 2.27466C27.7054 2.27466 30.4652 4.33846 31.2021 7.5813C34.7624 8.31238 37.0996 10.9905 37.0996 14.4456C37.0995 16.1992 36.6064 17.6932 35.7178 18.844C35.8056 19.7743 35.8691 20.8125 35.8691 22.2161C35.8691 24.2351 35.4496 26.2879 34.5947 27.8391C33.7389 29.3918 32.4383 30.4534 30.6807 30.4534C29.4624 30.4533 28.478 29.8761 27.7617 29.01C27.0655 28.1679 26.622 27.0507 26.4521 25.9143C26.1298 25.9284 25.7998 25.9514 25.4971 25.9514C23.9456 25.9514 22.564 25.4802 21.5684 24.6282C21.4456 24.5231 21.3282 24.4125 21.2178 24.2961C20.1634 24.5441 19.1167 24.6623 18.166 24.6624C15.5326 24.6624 13.2611 23.7967 11.7354 22.4553C11.0481 22.586 10.3174 22.6555 9.54883 22.6555C6.96271 22.6555 4.79879 21.8274 3.28125 20.3674C1.76351 18.9071 0.900391 16.8214 0.900391 14.3225C0.90055 11.5245 2.29579 8.89199 4.59473 7.33911C4.59439 7.31183 4.59277 7.2845 4.59277 7.25708C4.59277 3.97726 7.30213 1.70545 10.6562 1.70532C11.6573 1.70532 12.6977 1.90643 13.7002 2.34497C14.9314 1.03084 16.7116 0.25415 18.8086 0.25415ZM31.373 9.98169C31.2617 11.6266 30.7274 12.853 29.9639 13.8215C29.1054 14.9105 27.9634 15.6677 26.833 16.3284C25.6963 16.9927 24.5817 17.5552 23.7441 18.262C22.9134 18.963 22.3692 19.7955 22.3691 20.9954C22.3691 22.0118 22.799 22.7155 23.5566 23.1702C24.3219 23.6293 25.4288 23.8391 26.7822 23.8391C26.9522 23.8391 27.167 23.8357 27.3877 23.8323C27.6055 23.8289 27.8296 23.8255 28.0205 23.8254H28.1016C28.1801 23.8315 28.2499 23.8563 28.3037 23.9055C28.3756 23.9713 28.4004 24.0638 28.4004 24.1555C28.4004 25.0335 28.5699 26.0213 28.9443 26.7854C29.3186 27.5491 29.8864 28.0705 30.6807 28.0706C31.4416 28.0706 32.1414 27.4454 32.6562 26.3723C33.1681 25.3055 33.4805 23.8252 33.4805 22.1887C33.4805 21.6393 33.4597 21.1409 33.4277 20.6663C32.2325 21.228 30.7911 21.4832 29.1699 21.3801C28.513 21.3368 27.9688 20.869 27.9688 20.1956C27.9688 19.5508 28.5008 18.9511 29.1846 19.011H29.1836C30.8463 19.1383 32.2241 18.7385 33.1846 17.9417C34.1436 17.1459 34.6981 15.9451 34.6982 14.4456C34.6982 13.0711 34.2442 11.9302 33.458 11.1292C32.914 10.5749 32.207 10.1794 31.373 9.98169ZM18.7949 2.62329C16.2773 2.62329 14.4673 4.35227 14.2715 6.75513L14.2578 6.9895C14.2433 7.3577 14.1119 7.65547 13.8955 7.8606C13.6796 8.06533 13.3864 8.17114 13.0635 8.17114C12.7232 8.17107 12.419 8.04177 12.2041 7.81372C11.9892 7.5855 11.8692 7.26355 11.8838 6.88696C11.922 5.99259 12.1014 5.15908 12.4014 4.40552C11.811 4.19135 11.2154 4.08813 10.6426 4.08813C8.53611 4.08824 6.99512 5.39993 6.99512 7.25708C6.99514 8.10029 7.29663 8.82264 7.83887 9.33423C8.38143 9.84612 9.17289 10.1545 10.1641 10.1545C10.8074 10.1545 11.3584 10.7008 11.3584 11.3528C11.3584 12.0063 10.8058 12.5374 10.1641 12.5374C8.46702 12.5373 7.07293 11.995 6.10254 11.0588C5.74724 10.7161 5.45016 10.3211 5.21582 9.88306C4.00975 11.0166 3.30176 12.6229 3.30176 14.3098C3.30184 16.1093 3.9324 17.6009 5.02832 18.6428C6.12494 19.6853 7.6962 20.2854 9.58984 20.2854C11.4386 20.2854 12.9699 19.7649 14.0371 18.8645C15.1028 17.9654 15.7128 16.6817 15.7129 15.137C15.7129 14.1282 15.3927 13.3157 14.8428 12.7825C14.6872 12.6416 14.5469 12.5256 14.4199 12.4172C14.2941 12.3099 14.1808 12.2094 14.0869 12.1038C13.8937 11.8864 13.7843 11.6498 13.7842 11.2854C13.7842 10.9794 13.9058 10.7174 14.1162 10.5334C14.3255 10.3504 14.6169 10.2493 14.9512 10.2493C15.2025 10.2493 15.4084 10.2892 15.6182 10.384C15.7733 10.4542 15.9285 10.5532 16.1035 10.6848L16.2861 10.8274L16.2881 10.8293C16.7107 11.1908 17.0687 11.6326 17.3506 12.1428C18.2357 11.924 18.869 11.5633 19.2998 11.0608C19.8392 10.4313 20.0762 9.5699 20.0762 8.46411C20.0762 7.81135 20.6143 7.27954 21.2705 7.27954C21.9251 7.27955 22.4785 7.80975 22.4785 8.46411C22.4785 10.0669 22.0882 11.4206 21.2529 12.4602C20.5214 13.3706 19.4552 14.0311 18.0332 14.4114C18.0589 14.6594 18.0742 14.9147 18.0742 15.177C18.0742 17.4215 17.2182 19.2945 15.7197 20.6047C15.3733 20.9077 14.9917 21.1782 14.5801 21.4182C14.7539 21.5059 14.9351 21.5896 15.124 21.6653C16.1016 22.057 17.2549 22.2786 18.3984 22.2786C18.9532 22.2785 19.5285 22.2242 20.0771 22.1145C20.0048 21.7735 19.9668 21.4136 19.9668 21.0364C19.9668 17.8664 22.2811 16.5071 24.5293 15.1594C26.7926 13.8027 28.994 12.4559 28.9941 9.33228C28.9941 6.47879 26.7208 4.68506 24.3193 4.65845C23.836 4.65857 23.3388 4.72536 22.8965 4.84497L22.8955 4.84399C22.7648 4.88455 22.6427 4.90922 22.5332 4.88501C22.4133 4.85832 22.3269 4.7788 22.2627 4.65942L22.2598 4.65356C21.7176 3.44736 20.3624 2.62333 18.7949 2.62329Z'
-            fill='white'
-            stroke='white'
-            strokeWidth='0.2'
+            d='M11.302 21.6149C11.5234 21.744 11.6341 21.8086 11.7903 21.8421C11.9116 21.8681 12.0884 21.8681 12.2097 21.8421C12.3659 21.8086 12.4766 21.744 12.698 21.6149C14.646 20.4784 20 16.9084 20 12V6.6C20 6.04207 20 5.7631 19.8926 5.55048C19.7974 5.36198 19.6487 5.21152 19.4613 5.11409C19.25 5.00419 18.9663 5.00084 18.3988 4.99413C15.4272 4.95899 13.7136 4.71361 12 3C10.2864 4.71361 8.57279 4.95899 5.6012 4.99413C5.03373 5.00084 4.74999 5.00419 4.53865 5.11409C4.35129 5.21152 4.20259 5.36198 4.10739 5.55048C4 5.7631 4 6.04207 4 6.6V12C4 16.9084 9.35396 20.4784 11.302 21.6149Z'
+            stroke='#ffffff'
+            strokeWidth='1.8'
+            strokeLinecap='round'
+            strokeLinejoin='round'
           />
         </svg>
       </div>
@@ -129,6 +174,42 @@ const POLES = [
 
 export default function InnovationPoles() {
   const [selected, setSelected] = useState<(typeof POLES)[number]['key']>('ai')
+  const [progress, setProgress] = useState(0)
+  const [autoRotateEnabled, setAutoRotateEnabled] = useState(true)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState<{
+    title: string
+    contacts: ContactPerson[]
+  } | null>(null)
+
+  // Select a pole; optionally pause auto-rotation when selection is user-initiated
+  const handlePoleSelect = (
+    poleKey: (typeof POLES)[number]['key'],
+    pause?: boolean,
+  ) => {
+    setSelected(poleKey)
+    setProgress(0)
+    if (pause) {
+      setAutoRotateEnabled(false)
+    }
+  }
+
+  // Handle opening contact modal with specific pole's contact info
+  const handleOpenContactModal = (poleKey: (typeof POLES)[number]['key']) => {
+    const pole = POLES.find(p => p.key === poleKey)
+    if (pole && pole.contacts) {
+      setModalContent({
+        title: pole.contactTitle || 'Contacter l\'équipe',
+        contacts: [...pole.contacts],
+      })
+      setIsModalOpen(true)
+    }
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+  }
 
   // Read query parameter on component mount
   useEffect(() => {
@@ -136,10 +217,33 @@ export default function InnovationPoles() {
       const urlParams = new URLSearchParams(window.location.search)
       const poleParam = urlParams.get('pole')
       if (poleParam && POLES.some(pole => pole.key === poleParam)) {
-        setSelected(poleParam as (typeof POLES)[number]['key'])
+        // URL-driven selection should not pause auto-rotation
+        handlePoleSelect(poleParam as (typeof POLES)[number]['key'], false)
       }
     }
   }, [])
+
+  // Auto-rotation timer
+  useEffect(() => {
+    if (!autoRotateEnabled || isHovered) {
+      return
+    }
+
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          // Move to next pole
+          const currentIndex = POLES.findIndex(p => p.key === selected)
+          const nextIndex = (currentIndex + 1) % POLES.length
+          setSelected(POLES[nextIndex].key)
+          return 0 // Reset progress
+        }
+        return prev + 0.4 // 0.2% every 60ms = 30 seconds total
+      })
+    }, 60)
+
+    return () => clearInterval(interval)
+  }, [selected, autoRotateEnabled, isHovered])
 
   const active = POLES.find(p => p.key === selected)!
 
@@ -147,9 +251,16 @@ export default function InnovationPoles() {
     <div className='w-full md:mt-20'>
       <div className='relative z-10'>
         <div className='px-4 container mx-auto max-w-8xl'>
-          <div className='flex flex-wrap justify-center gap-8 xl:gap-12'>
+          <div
+            className='flex flex-wrap justify-center gap-8 xl:gap-12'
+          >
             {POLES.map(pole => (
-              <div key={pole.key} className='relative overflow-visible'>
+              <div
+                key={pole.key}
+                className='relative overflow-visible'
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 <SelectablePoleCard
                   title={pole.title}
                   subtitle={pole.subtitle}
@@ -157,28 +268,109 @@ export default function InnovationPoles() {
                   selected={pole.key === selected}
                   selectedGradientClass={pole.gradient}
                   borderColor={pole.borderColor}
-                  onClick={() => setSelected(pole.key)}
+                  onClick={() => handlePoleSelect(pole.key, true)}
                   icon={pole.icon}
                 />
+
+                {/* Animated progress border for selected card */}
+                {pole.key === selected && (
+                  <svg
+                    className='absolute inset-0 pointer-events-none w-full h-full'
+                    style={{ zIndex: 15, transform: 'scale(1.05)', transformOrigin: 'center' }}
+                  >
+                    <defs>
+                      <linearGradient id={`gradient-${pole.key}`} x1='0%' y1='0%' x2='100%' y2='100%'>
+                        <stop offset='0%' stopColor={pole.borderColor.replace('0.5', '0.8')} />
+                        <stop offset='50%' stopColor={pole.borderColor.replace('0.5', '1')} />
+                        <stop offset='100%' stopColor={pole.borderColor.replace('0.5', '0.6')} />
+                      </linearGradient>
+                    </defs>
+                    <rect
+                      x='1'
+                      y='1'
+                      width='calc(100% - 2px)'
+                      height='calc(100% - 2px)'
+                      rx='12'
+                      ry='12'
+                      fill='none'
+                      stroke={`url(#gradient-${pole.key})`}
+                      strokeWidth='2'
+                      pathLength='100'
+                      strokeLinecap={progress === 0 ? 'butt' : 'round'}
+                      strokeDasharray={`${progress} 100`}
+                      strokeDashoffset='0'
+                      vectorEffect='non-scaling-stroke'
+                      className={`transition-all duration-75 ease-linear ${
+                        progress === 0 ? 'opacity-0' : (isHovered ? 'opacity-60' : 'opacity-90')
+                      } ${progress > 85 ? 'animate-pulse' : ''}`}
+                      style={{
+                        filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.2))',
+                      }}
+                    />
+                  </svg>
+                )}
               </div>
             ))}
           </div>
+
+          {/* Auto-rotation controls */}
+          <div className='flex justify-center mt-6'>
+            <button
+              type='button'
+              onClick={() => setAutoRotateEnabled(!autoRotateEnabled)}
+              className='cursor-pointer flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-200 text-white/70 hover:text-white text-sm backdrop-blur-sm border border-white/10'
+            >
+              {autoRotateEnabled
+                ? (
+                    <>
+                      <svg className='w-3 h-3' fill='currentColor' viewBox='0 0 24 24'>
+                        <path d='M6 4h4v16H6V4zm8 0h4v16h-4V4z' />
+                      </svg>
+                      <span>Arrêter changement de pôle</span>
+                    </>
+                  )
+                : (
+                    <>
+                      <svg className='w-3 h-3' fill='currentColor' viewBox='0 0 24 24'>
+                        <path d='M8 5v14l11-7z' />
+                      </svg>
+                      <span>Reprendre changement de pôle</span>
+                    </>
+                  )}
+            </button>
+          </div>
         </div>
 
-        <div className='mt-40 mx-auto container'>
-          <AnimatePresence mode='wait'>
+        <motion.div
+          className='mt-40 mx-auto container'
+          layout
+          transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
+        >
+          <AnimatePresence mode='wait' initial={false}>
             <motion.div
               key={selected}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              layout
+              initial={{ opacity: 0, y: 12, filter: 'blur(6px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -8, filter: 'blur(6px)' }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              style={{ willChange: 'opacity, transform, filter' }}
             >
-              <active.component />
+              <active.component onOpenContactModal={() => handleOpenContactModal(selected)} isPriority />
             </motion.div>
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
+
+      {/* Contact Modal - Independent of pole components */}
+      {modalContent && (
+        <ContactModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          title={modalContent.title}
+          contacts={modalContent.contacts}
+        />
+      )}
     </div>
   )
 }

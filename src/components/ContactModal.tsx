@@ -1,4 +1,7 @@
 'use client'
+/* eslint-disable perfectionist/sort-imports */
+/* eslint-disable perfectionist/sort-named-imports */
+/* eslint-disable style/indent */
 
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -28,7 +31,7 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className='fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4'
+          className='fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4'
           onClick={handleBackdropClick}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -36,7 +39,7 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <motion.div
-            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-2xl min-w-[320px] max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
+            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-2xl mx-auto max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -60,8 +63,8 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
           <h2 className='text-lg sm:text-xl font-semibold mb-4 pr-8'>{title}</h2>
 
           <div className='space-y-4'>
-            {contacts.map((contact, index) => (
-              <div key={index} className='bg-white/5 rounded-lg p-4 border border-white/10'>
+            {contacts.map(contact => (
+              <div key={`${contact.email}-${contact.name}`} className='bg-white/5 rounded-lg p-4 border border-white/10'>
                 <h3 className='text-base sm:text-lg font-medium mb-4 break-words'>{contact.name}</h3>
 
                 <div className='space-y-3'>
