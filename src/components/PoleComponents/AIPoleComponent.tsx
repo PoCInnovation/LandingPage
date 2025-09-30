@@ -8,9 +8,10 @@ import FeaturedProjects from './FeaturedProjects'
 
 type AIPoleComponentProps = {
   onOpenContactModal: () => void
+  isPriority?: boolean
 }
 
-export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentProps) {
+export default function AIPoleComponent({ onOpenContactModal, isPriority = false }: AIPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'cyrebro',
@@ -69,6 +70,7 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
           imageSrc='/ai/ia_respo.png'
           imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
           onContactClick={onOpenContactModal}
+          priority={isPriority}
         />
         <StatsCard
           number='20+'
@@ -85,18 +87,21 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
           imageAlt='Hackathon Google'
           title='Hackathon Google'
           date='5 Juillet 2025'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/ai/siami.jpeg'
           imageAlt="Salon IA ministère de l'intérieur"
           title="Salon IA ministère de l'intérieur"
           date='8 Octobre 2024'
+          priority={isPriority}
         />
         <LargeEventCard
           imageSrc='/ai/mistral-hackathon.jpeg'
           imageAlt='Hackathon Mistral'
           title='Hackathon Mistral'
           date='19 Avril 2025'
+          priority={isPriority}
         />
       </div>
 
@@ -110,6 +115,7 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
             imageSrc='/ai/ia_respo.png'
             imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
             onContactClick={onOpenContactModal}
+            priority
           />
         </div>
 
@@ -131,12 +137,14 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
           imageAlt="Salon IA ministère de l'intérieur"
           title="Salon IA ministère de l'intérieur"
           date='8 Octobre 2024'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/ai/hackathon-google.jpeg'
           imageAlt='Hackathon Google'
           title='Hackathon Google'
           date='5 Juillet 2025'
+          priority={isPriority}
         />
 
         {/* Large Event Card spans full width */}
@@ -146,6 +154,7 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
             imageAlt='Hackathon Mistral'
             title='Hackathon Mistral'
             date='19 Avril 2025'
+            priority
           />
         </div>
       </div>
@@ -160,6 +169,7 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
             imageSrc='/ai/ia_respo.png'
             imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
             onContactClick={onOpenContactModal}
+            priority
           />
         </div>
 
@@ -184,12 +194,14 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
             imageAlt='Hackathon Google'
             title='Hackathon Google'
             date='5 Juillet 2025'
+            priority
           />
           <EventImageCard
             imageSrc='/ai/siami.jpeg'
             imageAlt="Salon IA ministère de l'intérieur"
             title="Salon IA ministère de l'intérieur"
             date='8 Octobre 2024'
+            priority
           />
         </div>
 
@@ -200,6 +212,7 @@ export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentP
             imageAlt='Hackathon Mistral'
             title='Hackathon Mistral'
             date='19 Avril 2025'
+            priority
           />
         </div>
       </div>

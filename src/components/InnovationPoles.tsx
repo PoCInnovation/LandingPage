@@ -356,7 +356,7 @@ export default function InnovationPoles() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               style={{ willChange: 'opacity, transform, filter' }}
             >
-              <active.component onOpenContactModal={() => handleOpenContactModal(selected)} />
+              <active.component onOpenContactModal={() => handleOpenContactModal(selected)} isPriority />
             </motion.div>
           </AnimatePresence>
         </motion.div>

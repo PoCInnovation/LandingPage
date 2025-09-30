@@ -8,9 +8,10 @@ import FeaturedProjects from './FeaturedProjects'
 
 type CyberPoleComponentProps = {
   onOpenContactModal: () => void
+  isPriority?: boolean
 }
 
-export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComponentProps) {
+export default function CyberPoleComponent({ onOpenContactModal, isPriority = false }: CyberPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'whitecomet-research',
@@ -68,6 +69,7 @@ export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComp
           imageSrc='/cyber/timo.png'
           imageAlt='Responsable Cybersécurité'
           onContactClick={onOpenContactModal}
+          priority={isPriority}
         />
         <StatsCard
           number='25+'
@@ -84,18 +86,21 @@ export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComp
           imageAlt='European Cyber Cup'
           title='European Cyber Cup'
           date='8 septembre 2021'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/cyber/incyber.png'
           imageAlt='Salon InCyber'
           title='Salon InCyber'
           date='1 Avril 2025'
+          priority={isPriority}
         />
         <LargeEventCard
           imageSrc='/cyber/pathwar.png'
           imageAlt='CTF Pathwar'
           title='CTF Pathwar'
           date='25 Mai 2023'
+          priority={isPriority}
         />
       </div>
 
@@ -130,12 +135,14 @@ export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComp
           imageAlt='Salon InCyber'
           title='Salon InCyber'
           date='1 Avril 2025'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/cyber/ec2.jpg'
           imageAlt='European Cyber Cup'
           title='European Cyber Cup'
           date='8 septembre 2021'
+          priority={isPriority}
         />
 
         {/* Large Event Card spans full width */}
@@ -145,6 +152,7 @@ export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComp
             imageAlt='CTF Pathwar'
             title='CTF Pathwar'
             date='25 Mai 2023'
+            priority={isPriority}
           />
         </div>
       </div>
@@ -183,12 +191,14 @@ export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComp
             imageAlt='European Cyber Cup'
             title='European Cyber Cup'
             date='8 septembre 2021'
+            priority={isPriority}
           />
           <EventImageCard
             imageSrc='/cyber/incyber.png'
             imageAlt='Salon InCyber'
             title='Salon InCyber'
             date='1 Avril 2025'
+            priority={isPriority}
           />
         </div>
 
@@ -199,6 +209,7 @@ export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComp
             imageAlt='CTF Pathwar'
             title='CTF Pathwar'
             date='25 Mai 2023'
+            priority={isPriority}
           />
         </div>
       </div>

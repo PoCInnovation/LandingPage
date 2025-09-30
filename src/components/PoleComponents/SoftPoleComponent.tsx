@@ -8,9 +8,10 @@ import FeaturedProjects from './FeaturedProjects'
 
 type SoftwarePoleComponentProps = {
   onOpenContactModal: () => void
+  isPriority?: boolean
 }
 
-export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePoleComponentProps) {
+export default function SoftwarePoleComponent({ onOpenContactModal, isPriority = false }: SoftwarePoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'sveno',
@@ -69,6 +70,7 @@ export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePo
           imageSrc='/soft/soft_respo.png'
           imageAlt='Laurent Gonzalez et Milo Kowalska, Responsables Software'
           onContactClick={onOpenContactModal}
+          priority={isPriority}
         />
         <StatsCard
           number='30+'
@@ -85,18 +87,21 @@ export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePo
           imageAlt='Hackathon Nasa'
           title='Hackathon Nasa Space apps challenge'
           date='3 octobre 2021'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/soft/vivatech.jpg'
           imageAlt='Salon Vivatech'
           title='Salon Vivatech'
           date='22 mai 2024'
+          priority={isPriority}
         />
         <LargeEventCard
           imageSrc='/soft/hackathon_facebook.jpeg'
           imageAlt='Hackathon facebook'
           title='Hackathon facebook'
           date='novembre 2018'
+          priority={isPriority}
         />
       </div>
 
@@ -131,12 +136,14 @@ export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePo
           imageAlt='Salon Vivatech'
           title='Salon Vivatech'
           date='22 mai 2024'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/soft/nasa_hackathon_3.png'
           imageAlt='Hackathon Nasa'
           title='Hackathon Nasa Space apps challenge'
           date='3 octobre 2021'
+          priority={isPriority}
         />
 
         {/* Large Event Card spans full width */}
@@ -146,6 +153,7 @@ export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePo
             imageAlt='Hackathon facebook'
             title='Hackathon facebook'
             date='novembre 2018'
+            priority={isPriority}
           />
         </div>
       </div>
@@ -184,12 +192,14 @@ export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePo
             imageAlt='Hackathon Nasa'
             title='Hackathon Nasa Space apps challenge'
             date='3 octobre 2021'
+            priority={isPriority}
           />
           <EventImageCard
             imageSrc='/soft/vivatech.jpg'
             imageAlt='Salon Vivatech'
             title='Salon Vivatech'
             date='22 mai 2024'
+            priority={isPriority}
           />
         </div>
 
@@ -200,6 +210,7 @@ export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePo
             imageAlt='Hackathon facebook'
             title='Hackathon facebook'
             date='novembre 2018'
+            priority={isPriority}
           />
         </div>
       </div>

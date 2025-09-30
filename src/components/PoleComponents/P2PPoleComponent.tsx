@@ -8,9 +8,10 @@ import FeaturedProjects from './FeaturedProjects'
 
 type P2PPoleComponentProps = {
   onOpenContactModal: () => void
+  isPriority?: boolean
 }
 
-export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponentProps) {
+export default function P2PPoleComponent({ onOpenContactModal, isPriority = false }: P2PPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'mev-tracker',
@@ -68,6 +69,7 @@ export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponen
           imageSrc='/p2p/p2p_respo.png'
           imageAlt='Aurelien Demeusy et Jules Lordet, Responsables Blockchain'
           onContactClick={onOpenContactModal}
+          priority={isPriority}
         />
         <StatsCard
           number='25+'
@@ -84,18 +86,21 @@ export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponen
           imageAlt='Hackathon ETHGlobal Cannes'
           title='Hackathon ETHGlobal Cannes'
           date='4 Juillet 2025'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/p2p/haks.jpg'
           imageAlt='Hackathon Haks'
           title='Hackathon Haks'
           date='12 Mai 2023'
+          priority={isPriority}
         />
         <LargeEventCard
           imageSrc='/p2p/krypto-tour.png'
           imageAlt='Salon Krypto Tour Lyon'
           title='Salon Krypto Tour Lyon'
           date='11 octobre 2024'
+          priority={isPriority}
         />
       </div>
 
@@ -130,12 +135,14 @@ export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponen
           imageAlt='Hackathon ETHGlobal Cannes'
           title='Hackathon ETHGlobal Cannes'
           date='4 Juillet 2025'
+          priority={isPriority}
         />
         <EventImageCard
           imageSrc='/p2p/haks.jpg'
           imageAlt='Hackathon Haks'
           title='Hackathon Haks'
           date='12 Mai 2023'
+          priority={isPriority}
         />
 
         {/* Large Event Card spans full width */}
@@ -145,6 +152,7 @@ export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponen
             imageAlt='Salon Krypto Tour Lyon'
             title='Salon Krypto Tour Lyon'
             date='11 octobre 2024'
+            priority={isPriority}
           />
         </div>
       </div>
@@ -183,12 +191,14 @@ export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponen
             imageAlt='Hackathon ETHGlobal Cannes'
             title='Hackathon ETHGlobal Cannes'
             date='4 Juillet 2025'
+            priority={isPriority}
           />
           <EventImageCard
             imageSrc='/p2p/haks.jpg'
             imageAlt='Hackathon Haks'
             title='Hackathon Haks'
             date='12 Mai 2023'
+            priority={isPriority}
           />
         </div>
 
@@ -199,6 +209,7 @@ export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponen
             imageAlt='Salon Krypto Tour Lyon'
             title='Salon Krypto Tour Lyon'
             date='11 octobre 2024'
+            priority={isPriority}
           />
         </div>
       </div>

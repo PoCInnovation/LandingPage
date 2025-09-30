@@ -68,7 +68,7 @@ export default function FeaturedProjects({ title = 'Les projets phares de notre 
                   className={`cursor-pointer relative flex-shrink-0 w-40 h-24 rounded-lg overflow-hidden border ${p.id === active.id ? 'border-white/60' : 'border-foreground/10'}`}
                   aria-label={`Afficher ${p.title}`}
                 >
-                  <Image src={p.heroImage.src} alt={p.heroImage.alt} width={320} height={180} className='w-full h-full object-cover' />
+                  <Image src={p.heroImage.src} alt={p.heroImage.alt} width={320} height={180} className='w-full h-full object-cover' loading='eager' />
                   {p.id === active.id && (
                     <div className='absolute inset-0 ring-2 ring-white/50 pointer-events-none' />
                   )}
