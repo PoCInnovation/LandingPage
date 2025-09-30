@@ -31,7 +31,7 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className='fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4'
+          className='fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4'
           onClick={handleBackdropClick}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -39,7 +39,7 @@ export default function ContactModal({ isOpen, onClose, title, contacts }: Conta
           transition={{ duration: 0.2, ease: 'easeOut' }}
         >
           <motion.div
-            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-2xl min-w-[320px] max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
+            className='relative bg-[#E2E2E21A]/90 backdrop-blur-2xl rounded-xl border border-foreground/20 w-full max-w-2xl mx-auto max-h-[90vh] overflow-y-auto p-6 shadow-2xl'
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}

@@ -1,8 +1,10 @@
 'use client'
 /* eslint-disable react-hooks-extra/no-direct-set-state-in-use-effect */
 
+import type { ContactPerson } from './ContactModal'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import ContactModal from './ContactModal'
 import AIPoleComponent from './PoleComponents/AIPoleComponent'
 import CyberPoleComponent from './PoleComponents/CyberPoleComponent'
 import P2PPoleComponent from './PoleComponents/P2PPoleComponent'
@@ -20,6 +22,19 @@ const POLES = [
     description:
       'Nous explorons le machine learning, l\'IA générative et plein d\'autres architectures pour créer des outils utiles et innovants.',
     component: AIPoleComponent,
+    contacts: [
+      {
+        name: 'Manmohit-Singh Lal',
+        email: 'manmohit.singh-lal@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/manmohit-singh-l-300b50356/',
+      },
+      {
+        name: 'Sacha Henneveux',
+        email: 'sacha.henneveux@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/sacha-henneveux-084052304',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe IA',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#AA222B] to-[#5E1265] h-14 w-14 rounded-sm'>
         <svg
@@ -49,6 +64,19 @@ const POLES = [
     description:
       'Développement web, mobile et desktop : nous construisons des solutions techniques utiles, performantes et open-source.',
     component: SoftwarePoleComponent,
+    contacts: [
+      {
+        name: 'Laurent Gonzalez',
+        email: 'laurent.gonzalez@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/laurent-gonzalez-epitech/',
+      },
+      {
+        name: 'Milo Kowalska',
+        email: 'milo.kowalska@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/milo-kowalska-6a22472a3/',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe Software',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#224DAA] to-[#3B1265]  h-14 w-14 rounded-sm'>
         <svg
@@ -78,6 +106,19 @@ const POLES = [
     description:
       'Conception d\'apps, smart contracts et protocoles décentralisés sur Ethereum, Layer 2, Solana et plus.',
     component: P2PPoleComponent,
+    contacts: [
+      {
+        name: 'Aurelien Demeusy',
+        email: 'aurelien.demeusy@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/aurelien-demeusy/',
+      },
+      {
+        name: 'Jules Lordet',
+        email: 'jules.lordet@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/in/jules-lordet-9798a12b3/',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe Blockchain',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#7C9221] to-[#12653B] h-14 w-14 rounded-sm'>
         <svg
@@ -107,6 +148,14 @@ const POLES = [
     description:
       'Analyse, pentesting, audit et création d\'outils défensifs pour renforcer la sécurité des systèmes numériques.',
     component: CyberPoleComponent,
+    contacts: [
+      {
+        name: 'Timothée Pasteau-Berthaud',
+        email: 'timothee.pasteau-berthaud@poc-innovation.fr',
+        linkedinUrl: 'https://www.linkedin.com/company/poc-innovation',
+      },
+    ],
+    contactTitle: 'Contacter l\'équipe Cybersécurité',
     icon: (
       <div className='flex items-center justify-center bg-gradient-to-tr from-[#2D909D] to-[#0F439D] h-14 w-14 rounded-sm'>
         <svg className='block w-3/4 h-3/4' viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -128,6 +177,11 @@ export default function InnovationPoles() {
   const [progress, setProgress] = useState(0)
   const [autoRotateEnabled, setAutoRotateEnabled] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [modalContent, setModalContent] = useState<{
+    title: string
+    contacts: ContactPerson[]
+  } | null>(null)
 
   // Select a pole; optionally pause auto-rotation when selection is user-initiated
   const handlePoleSelect = (
@@ -139,6 +193,22 @@ export default function InnovationPoles() {
     if (pause) {
       setAutoRotateEnabled(false)
     }
+  }
+
+  // Handle opening contact modal with specific pole's contact info
+  const handleOpenContactModal = (poleKey: (typeof POLES)[number]['key']) => {
+    const pole = POLES.find(p => p.key === poleKey)
+    if (pole && pole.contacts) {
+      setModalContent({
+        title: pole.contactTitle || 'Contacter l\'équipe',
+        contacts: [...pole.contacts],
+      })
+      setIsModalOpen(true)
+    }
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   // Read query parameter on component mount
@@ -168,7 +238,7 @@ export default function InnovationPoles() {
           setSelected(POLES[nextIndex].key)
           return 0 // Reset progress
         }
-        return prev + 0.2 // 0.2% every 60ms = 30 seconds total
+        return prev + 0.4 // 0.2% every 60ms = 30 seconds total
       })
     }, 60)
 
@@ -286,11 +356,21 @@ export default function InnovationPoles() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               style={{ willChange: 'opacity, transform, filter' }}
             >
-              <active.component />
+              <active.component onOpenContactModal={() => handleOpenContactModal(selected)} />
             </motion.div>
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Contact Modal - Independent of pole components */}
+      {modalContent && (
+        <ContactModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          title={modalContent.title}
+          contacts={modalContent.contacts}
+        />
+      )}
     </div>
   )
 }

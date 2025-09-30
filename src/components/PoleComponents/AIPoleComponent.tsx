@@ -1,37 +1,16 @@
-import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React, { useState } from 'react'
-import ContactModal from '../ContactModal'
+import React from 'react'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
 import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
-export default function AIPoleComponent() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+type AIPoleComponentProps = {
+  onOpenContactModal: () => void
+}
 
-  const contacts: ContactPerson[] = [
-    {
-      name: 'Manmohit-Singh Lal',
-      email: 'manmohit.singh-lal@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/manmohit-singh-l-300b50356/',
-    },
-    {
-      name: 'Sacha Henneveux',
-      email: 'sacha.henneveux@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/sacha-henneveux-084052304',
-    },
-  ]
-
-  const handleContactClick = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
-
+export default function AIPoleComponent({ onOpenContactModal }: AIPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'cyrebro',
@@ -89,7 +68,7 @@ export default function AIPoleComponent() {
           role='Responsables IA'
           imageSrc='/ai/ia_respo.png'
           imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
-          onContactClick={handleContactClick}
+          onContactClick={onOpenContactModal}
         />
         <StatsCard
           number='20+'
@@ -130,7 +109,7 @@ export default function AIPoleComponent() {
             role='Responsables IA'
             imageSrc='/ai/ia_respo.png'
             imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -180,7 +159,7 @@ export default function AIPoleComponent() {
             role='Responsables IA'
             imageSrc='/ai/ia_respo.png'
             imageAlt='Manmohit-Singh Lal et Sacha Henneveux, Responsables IA'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -228,14 +207,6 @@ export default function AIPoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        title="Contacter l'équipe IA"
-        contacts={contacts}
-      />
     </div>
   )
 }

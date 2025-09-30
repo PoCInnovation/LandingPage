@@ -1,37 +1,16 @@
-import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React, { useState } from 'react'
-import ContactModal from '../ContactModal'
+import React from 'react'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
 import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
-export default function SoftwarePoleComponent() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+type SoftwarePoleComponentProps = {
+  onOpenContactModal: () => void
+}
 
-  const contacts: ContactPerson[] = [
-    {
-      name: 'Laurent Gonzalez',
-      email: 'laurent.gonzalez@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/laurent-gonzalez-epitech/',
-    },
-    {
-      name: 'Milo Kowalska',
-      email: 'milo.kowalska@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/milo-kowalska-6a22472a3/',
-    },
-  ]
-
-  const handleContactClick = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
-
+export default function SoftwarePoleComponent({ onOpenContactModal }: SoftwarePoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'sveno',
@@ -89,7 +68,7 @@ export default function SoftwarePoleComponent() {
           role='Responsables Software'
           imageSrc='/soft/soft_respo.png'
           imageAlt='Laurent Gonzalez et Milo Kowalska, Responsables Software'
-          onContactClick={handleContactClick}
+          onContactClick={onOpenContactModal}
         />
         <StatsCard
           number='30+'
@@ -130,7 +109,7 @@ export default function SoftwarePoleComponent() {
             role='Responsables Software'
             imageSrc='/soft/soft_respo.png'
             imageAlt='Laurent Gonzalez et Milo Kowalska, Responsables Software'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -180,7 +159,7 @@ export default function SoftwarePoleComponent() {
             role='Responsables Software'
             imageSrc='/soft/soft_respo.png'
             imageAlt='Laurent Gonzalez et Milo Kowalska, Responsables Software'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -228,14 +207,6 @@ export default function SoftwarePoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        title="Contacter l'équipe Software"
-        contacts={contacts}
-      />
     </div>
   )
 }

@@ -1,37 +1,16 @@
-import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React, { useState } from 'react'
-import ContactModal from '../ContactModal'
+import React from 'react'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
 import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
-export default function P2PPoleComponent() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+type P2PPoleComponentProps = {
+  onOpenContactModal: () => void
+}
 
-  const contacts: ContactPerson[] = [
-    {
-      name: 'Aurelien Demeusy',
-      email: 'aurelien.demeusy@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/aurelien-demeusy/',
-    },
-    {
-      name: 'Jules Lordet',
-      email: 'jules.lordet@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/in/jules-lordet-9798a12b3/',
-    },
-  ]
-
-  const handleContactClick = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
-
+export default function P2PPoleComponent({ onOpenContactModal }: P2PPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'mev-tracker',
@@ -88,7 +67,7 @@ export default function P2PPoleComponent() {
           role='Responsables Blockchain'
           imageSrc='/p2p/p2p_respo.png'
           imageAlt='Aurelien Demeusy et Jules Lordet, Responsables Blockchain'
-          onContactClick={handleContactClick}
+          onContactClick={onOpenContactModal}
         />
         <StatsCard
           number='25+'
@@ -129,7 +108,7 @@ export default function P2PPoleComponent() {
             role='Responsables Blockchain'
             imageSrc='/p2p/p2p_respo.png'
             imageAlt='Aurelien Demeusy et Jules Lordet, Responsables Blockchain'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -179,7 +158,7 @@ export default function P2PPoleComponent() {
             role='Responsables Blockchain'
             imageSrc='/p2p/p2p_respo.png'
             imageAlt='Aurelien Demeusy et Jules Lordet, Responsables Blockchain'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -227,14 +206,6 @@ export default function P2PPoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        title="Contacter l'équipe Blockchain"
-        contacts={contacts}
-      />
     </div>
   )
 }

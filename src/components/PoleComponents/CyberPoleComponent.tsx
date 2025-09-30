@@ -1,32 +1,16 @@
-import type { ContactPerson } from '../ContactModal'
 import type { FeaturedProject } from './FeaturedProjects'
-import React, { useState } from 'react'
-import ContactModal from '../ContactModal'
+import React from 'react'
 import LargeEventCard from '../PoleCards/LargeEventCard'
 import EventImageCard from '../PoleCards/MediumEventCard'
 import ProfileCard from '../PoleCards/ProfileCard'
 import StatsCard from '../PoleCards/StatsCard'
 import FeaturedProjects from './FeaturedProjects'
 
-export default function CyberPoleComponent() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+type CyberPoleComponentProps = {
+  onOpenContactModal: () => void
+}
 
-  const contacts: ContactPerson[] = [
-    {
-      name: 'Timothée Pasteau-Berthaud',
-      email: 'timothee.pasteau-berthaud@poc-innovation.fr',
-      linkedinUrl: 'https://www.linkedin.com/company/poc-innovation',
-    },
-  ]
-
-  const handleContactClick = () => {
-    setIsModalOpen(true)
-  }
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false)
-  }
-
+export default function CyberPoleComponent({ onOpenContactModal }: CyberPoleComponentProps) {
   const featuredProjects: FeaturedProject[] = [
     {
       id: 'whitecomet-research',
@@ -83,7 +67,7 @@ export default function CyberPoleComponent() {
           role='Responsable Cybersécurité'
           imageSrc='/cyber/timo.png'
           imageAlt='Responsable Cybersécurité'
-          onContactClick={handleContactClick}
+          onContactClick={onOpenContactModal}
         />
         <StatsCard
           number='25+'
@@ -124,7 +108,7 @@ export default function CyberPoleComponent() {
             role='Responsable Cybersécurité'
             imageSrc='/cyber/timo.png'
             imageAlt='Responsable Cybersécurité'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -174,7 +158,7 @@ export default function CyberPoleComponent() {
             role='Responsable Cybersécurité'
             imageSrc='/cyber/timo.png'
             imageAlt='Responsable Cybersécurité'
-            onContactClick={handleContactClick}
+            onContactClick={onOpenContactModal}
           />
         </div>
 
@@ -222,14 +206,6 @@ export default function CyberPoleComponent() {
       <div className='w-full px-4'>
         <FeaturedProjects projects={featuredProjects} />
       </div>
-
-      {/* Contact Modal */}
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        title="Contacter l'équipe Cybersécurité"
-        contacts={contacts}
-      />
     </div>
   )
 }
