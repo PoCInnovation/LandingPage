@@ -38,7 +38,7 @@ function Association() {
               height={400}
               className='
                 w-full
-                h-[300px] sm:h-[400px] md:h-[456px] lg:h-[520px]
+                h-[300px] sm:h-[400px] md:h-[456px] lg:h-[516px]
                 rounded-lg shadow-md border border-foreground/10
                 object-cover
               '
