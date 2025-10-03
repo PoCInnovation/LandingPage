@@ -32,19 +32,21 @@ function GlassyNavbar() {
   return (
     <>
       <div
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex bg-[#E2E2E21A]/80 border-foreground/10 rounded-4xl backdrop-blur-3xl shadow-lg shadow-white/10 px-2 sm:pl-4 sm:pr-2 md:pr-2 items-center gap-1 sm:gap-3 md:gap-6 transition-transform duration-300 h-14 sm:h-16 w-fit min-w-[288px] pr-1 sm:min-w-[355px] md:min-w-[460px] ${isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+2rem)]'}`}
+        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex bg-[#E2E2E21A]/80 border-foreground/10 rounded-4xl backdrop-blur-3xl shadow-lg shadow-white/10 items-center transition-transform duration-300 h-14 sm:h-16 w-fit min-w-[288px] sm:min-w-[355px] md:min-w-[460px] py-2 pl-4 pr-2 ${isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+2rem)]'}`}
       >
-        <Link href='/' className='cursor-pointer group'>
-          <Image
-            src='/logo_poc.png'
-            alt='Logo PoC'
-            width={80}
-            height={80}
-            className='object-contain w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 opacity-0 animate-[fadeIn_0.3s_ease-in-out_forwards] ml-1 sm:ml-2 md:ml-3 mr-2 sm:mr-3 md:mr-4'
-            priority
-          />
-        </Link>
-        <div className='flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8'>
+        <div className='flex items-center justify-start w-fit-content'>
+          <Link href='/' className='cursor-pointer group'>
+            <Image
+              src='/logo_poc.png'
+              alt='Logo PoC'
+              width={80}
+              height={80}
+              className='object-contain w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 opacity-0 animate-[fadeIn_0.3s_ease-in-out_forwards]'
+              priority
+            />
+          </Link>
+        </div>
+        <div className='flex-1 flex items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8'>
           <Link href='/' className='cursor-pointer group'>
             <button className='cursor-pointer' type='button'>
               <span className='text-muted-foreground group-hover:text-white group-active:text-white transition-colors duration-200 text-xs sm:text-sm md:text-lg font-medium'>
@@ -59,6 +61,8 @@ function GlassyNavbar() {
               </span>
             </button>
           </Link>
+        </div>
+        <div className='flex items-center justify-end w-[90px] sm:w-[100px] md:w-[120px]'>
           <PoCButton
             className='cursor-pointer !px-3 sm:!px-4 md:!px-6 !py-1.5 sm:!py-3 md:!py-4 !h-10 sm:!h-auto flex items-center justify-center sm:block'
             onClick={() => setIsContactModalOpen(true)}
