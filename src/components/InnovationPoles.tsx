@@ -192,6 +192,17 @@ export default function InnovationPoles() {
     setProgress(0)
     if (pause) {
       setAutoRotateEnabled(false)
+
+      // On mobile, scroll to the pole component section
+      if (typeof window !== 'undefined' && window.innerWidth < 768) {
+        // Wait for state update and animation to start
+        setTimeout(() => {
+          const poleSection = document.querySelector('.pole-component-section')
+          if (poleSection) {
+            poleSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+      }
     }
   }
 
@@ -342,7 +353,7 @@ export default function InnovationPoles() {
         </div>
 
         <motion.div
-          className='mt-40 mx-auto container'
+          className='mt-40 mx-auto container pole-component-section'
           layout
           transition={{ layout: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
         >
