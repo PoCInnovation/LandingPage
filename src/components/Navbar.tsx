@@ -34,7 +34,7 @@ function GlassyNavbar() {
       <div
         className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 flex bg-[#E2E2E21A]/80 border-foreground/10 rounded-4xl backdrop-blur-3xl shadow-lg shadow-white/10 items-center transition-transform duration-300 h-14 sm:h-16 w-fit min-w-[288px] sm:min-w-[355px] md:min-w-[460px] py-2 pl-4 pr-2 ${isVisible ? 'translate-y-0' : '-translate-y-[calc(100%+2rem)]'}`}
       >
-        <div className='flex items-center justify-start w-fit-content'>
+        <div className='flex items-center justify-start w-fit-content mr-2 sm:mr-4 md:mr-6'>
           <Link href='/' className='cursor-pointer group'>
             <Image
               src='/logo_poc.png'
@@ -56,7 +56,7 @@ function GlassyNavbar() {
           </Link>
           <Link href='/innovation' className='cursor-pointer group'>
             <button className='cursor-pointer' type='button'>
-              <span className='text-muted-foreground group-hover:text-white group-active:text-white transition-colors duration-200 text-xs sm:text-sm md:text-lg font-medium'>
+              <span className='text-muted-foreground group-hover:text-white group-active:text-white transition-colors duration-200 text-xs sm:text-sm md:text-lg font-medium mx-1 sm:mx-2 md:mx-4'>
                 Pôles
               </span>
             </button>
